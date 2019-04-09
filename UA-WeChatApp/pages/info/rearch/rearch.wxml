@@ -1,0 +1,45 @@
+<view class='search-class'>
+  <!-- 头部搜索 -->
+  <view class='search-wrapper' wx-if="{{!domHide}}">
+    <input class='search-input' cursorNum='{{cursorNum}}' focus='{{selectinputs}}' bindinput='searchText' bindconfirm='bindconfirmFun' placeholder='搜索商品' confirm-type='search' confirm-hold='{{confirmhold}}' value='{{inputText}}'></input>
+    <image class='seach-left' mode='widthFix' src='../../../resources/imgs/Magnifier.png'></image>
+    <image class='seach-right' bindtap='emptyInput' mode='widthFix' src='../../../resources/imgs/cancel.png'></image>
+    <view class='cancel-sty' bindtap='cancelFun'>取消</view>
+  </view>
+  <!-- 没有搜索到的显示 -->
+  <view class='no-search' style='display:{{searchState==1?"block":"none"}};' wx-if="{{!domHide}}">
+    <view>抱歉“ <text style='word-break:break-all;word-warp:break-word;'>{{searchFail}}</text> ”暂无搜索结果</view>
+    <view>试试其他热门商品推荐</view>
+  </view>
+  <view class='no-search' style='display:{{searchState==1?"block":"none"}};' wx-else>
+    <view>暂无专区</view>
+  </view>
+  <!-- 最近搜索 -->
+  <view  wx-if="{{!domHide}}" class='near-search' style='display:{{searchState==1||searchState==0?"block":"none"}};'>
+    <view class='near-title'>
+      <view>最近搜索</view>
+      <view>
+        <image style='width:35rpx;height:35rpx;' bindtap='deleteFun' mode='widthFix' src='../../../resources/imgs/seach-del.png'></image>
+      </view>
+    </view>
+    <!-- 搜索的内容 -->
+    <view class='sreach-content'>
+      <view wx:for='{{inputTextArr}}' bindtap='selectText' data-text='{{item}}' wx:key='{{index}}'>{{item}}</view>
+    </view>
+  </view>
+  <!-- 搜索成功 -->
+  <view style='background:#f0f0f0;margin-top: {{!domHide?"140rpx":"0"}};display:{{searchState==2?"block":"none"}};'>
+    <!-- 循环展示搜索到的内容 -->
+    <view class='mall_main clearfix' bindtap='details' wx:for="{{mallLists}}" wx:key="index" data-id="{{item.id}}" data-storeid="{{item.storeId}}" data-nama='{{item.type}}' data-off="{{off}}" id='{{index}}'>
+      <image src='{{item.imageUrl}}' class='img_box fl'></image>
+      <view class='fr txt_m'>
+          <image src='../../../resources/imgs/hot.png' class='img1'></image>
+          <view>{{item.name}}</view>
+          <view>
+              <text class='color_t'>￥<text>{{item.salePrice}}</text></text>
+              <text class="color_txt" style="text-decoration:line-through;display: {{ Number(item.salePrice) > Number(item.tagPrice)||item.salePrice==item.tagPrice ? 'none' : 'inline-block' }};">￥<text>{{item.tagPrice}}</text></text>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

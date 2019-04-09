@@ -1,0 +1,67 @@
+<view>
+<!--店铺循环  -->
+  <view class='main_add'>
+  <!--  店铺名称-编辑/完成  -->
+    <view class='edit-complete' style="display:{{itemList.length<0?'none':'block'}}">
+      <view class='title_name'>UA</view>
+      <view class='edit-complete-button' bindtap='editComplete'>{{taggleBtnText}}</view>
+    </view>
+    <!--  循环区域  -->
+    <view bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{itemList}}" wx:for-index="idx" wx:key="" class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{idx}}" data-id='{{idx}}' >
+    <!-- <view bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{itemList}}" wx:for-index="idx" wx:key="" class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{idx}}" > -->
+        <view class='no-touch-item' style='display:{{item.CartItemValidate==1?"block":"none"}}'></view>
+        <view class='add_txt clearfix ' >
+            <view class='fl img_btn' bindtap="{{item.CartItemValidate==1 ? '' : 'selectedlist'}}" data-groupindex="{{idx}}" data-childindex="{{idx}}" >   
+                <block wx:if="{{item.pc}}">
+                  <image src="{{img2}}" class='img_deb'></image>
+                </block>
+                <block wx:else>
+                  <image src="{{img1}}" class='img_deb'></image>
+                </block>
+            </view>
+            <!--  -->
+            <view class='fr box_add' bindtap='details' data-id="{{item.productId}}" data-storeid="{{item.storeId}}" data-nama='{{item.type}}'>
+                <view  class='clearfix main_box'>
+                  <image class="fl shop_name" mode='aspectFit' src="{{item.imageUrl}}"></image>
+                  <!-- 库存不足 -->
+                  <view class='img-touch-item' style='display:{{item.CartItemValidate==1?"block":"none"}}'>库存不足</view>
+                  <view class='fl shop_text'  >
+                      <view class='nowrap'>{{item.productName}}</view>
+                      <view class='color_b nowrap'><text>颜色：{{item.colorName}}    {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text></view>
+                      <view class='clearfix'>
+                          <view class='fl color_r'>￥<text>{{item.salePrice}}</text></view>
+                          <view class='fr color_b'>x<text>{{item.count}}</text></view>
+                      </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+        <!--点击编辑出来的删除按钮  -->
+        <view style="display:{{isEdit==false?'none':'block'}}">
+          <view class="del-absout" catchtap="del" data-index="{{idx}}" data-id='{{idx}}' data-StoreID='{{item.storeId}}' data-isclick='{{item.isclick}}' data-skuid='{{item.skuId}}'>删除</view>
+          <!--选择数量  -->
+           <view class='clearfix btn_m'>
+                  <view class='fl btn_s {{ item.count== "1" ? "cur" : "" }}' data-item='{{item}}'  catchtap="min">-</view>
+                  <view class='fl btn_t'>{{item.count}}</view>
+                  <view class='fl btn_s {{ item.count != "50" ? "" : "cur" }}' data-item='{{item}}' catchtap="add"  >+</view>
+              </view>
+        </view>
+        <!--左滑删除  -->
+        <view class="del" catchtap="del" data-index="{{idx}}" data-id='{{idx}}'  data-StoreID='{{item.storeId}}' data-isclick='{{item.isclick}}' data-skuid='{{item.skuId}}'>删除</view>
+    </view>
+  </view>
+  <view style='height:90rpx;'></view>
+</view>
+<view class='clearfix btn_swith'>
+    <view class='fl' bindtap='checkAll'>
+      <block wx:if="{{isSelectedAll}}">
+        <image src="{{img2}}" class='img_deb'></image>
+      </block>
+      <block wx:else>
+        <image src="{{img1}}" class='img_deb'></image>
+      </block>
+      <text>全选</text>
+    </view>
+    <view class='fl'>合计：<text>￥{{totalPrice}}.00</text></view>
+    <view class='fr' bindtap='order' data-btn='{{off}}'>结算</view>
+</view> 

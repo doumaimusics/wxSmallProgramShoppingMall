@@ -1,0 +1,14 @@
+<view class="winnerPoster {{visible ? 'show' : ''}}">
+  <canvas canvas-id="myCanvas" class="canvasShare"></canvas>
+  <scroll-view class="img-box" scroll-y style="width: 100%">
+    <view class="holder">
+      <image src="{{imageFile}}" class="img-priview"></image>
+    </view>
+  </scroll-view>
+  <button class="saveImg {{signs?'slideUp':''}} {{signs?'fix-iphonex-button':''}}" bindtap="saveShareImg" hidden='{{openSettingBtnHidden}}'>
+    保存图片
+  </button>
+  <button  class="saveImg change_btn {{signs?'slideUp':''}} {{signs?'fix-iphonex-button':''}}" open-type="openSetting" bindopensetting='handleSetting' hidden='{{!openSettingBtnHidden}}'>
+    去授权
+  </button>
+</view>

@@ -1,0 +1,25 @@
+<view>
+  <view class='choiceDiscount'>
+    <!-- 绑定栏  -->
+    <view class='search-wrapper'>
+      <input class='search-input' placeholder='请输入优惠券代码' bindinput='getCode'></input>
+      <button class='search-button' bindtap='binding'>绑定</button>
+    </view>
+    <!-- 内容  -->
+    <view class='content-wrapper'>
+
+      <view class='content-item' wx:for='{{coupon}}' wx:key='' data-index='{{item.id}}' bindtap='getCoupon'>
+        <view class='item-left'>
+          <view class='item-left-sum'>￥<text class='text-sum'>{{item.deduction_amount}}</text></view>
+          <view class='item-left-explain'>满{{item.limit_amount}}元可用</view>
+        </view>
+        <view class='item-right'>
+          <view class='item-right-title'>{{item.name}}</view>
+          <view class='item-right-explain'>{{item.description}}</view>
+          <view class='item-right-time'>有效期：{{item.start_date}}~{{item.end_date}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

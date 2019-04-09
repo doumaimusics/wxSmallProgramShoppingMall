@@ -1,0 +1,93 @@
+/**app.wxss**/
+page {
+    background-color: #f0f0f0;
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-between;*/
+    padding: 0;
+    box-sizing: border-box;
+    /*background-color: #fff;*/
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.pt88 {
+    padding-top: 88rpx;
+}
+.info-list {
+    width: 720rpx;
+    padding-left: 30rpx;
+    border-top: 2rpx solid #f0f0f0;
+    background: #fff;
+}
+.info-list .info-item {
+    width: 690rpx;
+    height: 118rpx;
+    padding: 20rpx 30rpx 20rpx 0;
+    border-bottom: 2rpx solid #f0f0f0;
+}
+.info-item .info-item-img {
+    float: left;
+    width: 174rpx;
+    height: 118rpx;
+    margin-right: 20rpx;
+}
+.info-item .info-item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 118rpx;
+    overflow: hidden;
+}
+.info-item-text .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    align-content: flex-start;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    font-size: 28rpx;
+    line-height: 1.5;
+    color: #333;
+}
+.info-item-text .time {
+    align-content: flex-end;
+    width: 100%;
+    color: #999;
+    font-size: 24rpx;
+    line-height: 1;
+    text-align: right;
+}
+.car-type-imgs {
+    position: relative;
+    height: 500rpx;
+}
+.car-type-imgs wx-image {
+    width: 750rpx;
+    height: 500rpx;
+}
+.imgs-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20rpx 24rpx;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 1;
+    background-color: rgba(0, 0, 0, .3)
+}

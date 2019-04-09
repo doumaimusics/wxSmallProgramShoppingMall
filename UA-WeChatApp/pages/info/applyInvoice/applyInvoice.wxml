@@ -1,0 +1,50 @@
+<view>
+  <view class='applyInvoice-wrapper'>
+    <!-- 选择发票  -->
+    <view class='applyInvoice-tab'>
+      <view id='0' class="tabStyle {{tabtaggle == '0' ? 'select-tab' : 'no-select-tab'}}" bindtap='tabClickSelect'>不需要</view>
+      <view id='1' class="tabStyle {{tabtaggle == '1' ? 'select-tab' : 'no-select-tab'}}" bindtap='tabClickSelect' style='margin:0 5%;'>个人</view>
+      <view id='2' class="tabStyle {{tabtaggle == '2' ? 'select-tab' : 'no-select-tab'}}" bindtap='tabClickSelect'>公司</view>
+    </view>
+    <!-- 选择内容 -->
+    <view class='applyInvoice-content' style="display:{{tabtaggle == '0' ? 'none' : 'block'}}">
+      <!--个人  -->
+      <view class='applyInvoice-personal' style="display:{{tabtaggle == '1' ? 'block' : 'none'}}">
+        <view class='input-border'>
+          <input class='inputStyle' bindinput='receiptTtitle' placeholder='请输入姓名,默认为个人'></input>
+        </view>
+        <view class='input-border input-middle' >
+          <text class='Required'>*</text>
+          <input class='inputStyle' style='padding-left: 2px;' bindinput='TaxMobile' placeholder='电子发票通知手机号'></input>
+        </view>
+        <view class='input-border'>
+          <input class='inputStyle' bindinput='TaxEmail' placeholder='电子发票通知邮箱'></input>
+        </view>
+      </view>
+      <!--公司  -->
+      <view class='applyInvoice-company' style="display:{{tabtaggle == '2' ? 'block' : 'none'}}">
+        <view class='input-border input-middle'>
+          <text class='Required'>*</text>
+          <input class='inputStyle' style='padding-left: 2px;' bindinput='receiptTtitle' placeholder='请输入公司名称全称'></input>
+        </view>
+        <view class='input-border input-middle' >
+          <text class='Required'>*</text>
+          <input class='inputStyle' style='padding-left: 2px;' bindinput='TaxPayerId' placeholder='请输入纳税人识别号或者统一社会信息代码'></input>
+        </view>
+        <view class='input-border input-middle'>
+          <text class='Required'>*</text>
+          <input class='inputStyle' style='padding-left: 2px;' bindinput='TaxMobile' placeholder='电子发票通知手机号'></input>
+        </view>
+        <view class='input-border input-middle'>
+          <text class='Required'>*</text>
+          <input class='inputStyle' style='padding-left: 2px;'  bindinput='TaxEmail' placeholder='电子发票通知邮箱'></input>
+        </view>
+      </view>
+    </view>
+  </view>  
+  <!-- 提交按钮  -->
+  <view class='post_btn_sty'>
+    <button bindtap='InvoiceApplication'>确定</button>
+    <button bindtap='cancelApplication'>取消</button>
+  </view>
+ </view>  

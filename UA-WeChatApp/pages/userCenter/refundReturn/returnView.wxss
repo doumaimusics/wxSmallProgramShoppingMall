@@ -1,0 +1,143 @@
+.container1,.container2{
+  width: 100%;
+  background-color: #fff;
+  margin: 30rpx auto;
+  font-size: 36rpx;
+}
+.container2{
+  height:300rpx;
+}
+.sectiontitle{
+  width: 680rpx;
+  height: 100rpx;  
+  line-height: 100rpx;
+  margin: 0 auto;
+}
+.fgx{
+  width: 680rpx;
+  height: 5rpx;
+  background-color: #eee;
+  margin: 0 auto;
+}
+.uploadimglist{
+  width:160rpx;
+  height:160rpx;
+  margin:30rpx auto;
+  margin-left:30rpx;
+  position: relative;
+}
+.photo-wrapper{
+  position: relative;
+}
+.addimg{
+  border: 1rpx solid #000000;
+  width:160rpx;
+  height:160rpx;
+  margin-right:30rpx; 
+  float: left;
+}
+.imagearr{
+  width: 200rpx;
+  float: left;
+}
+.img-text{
+  width:270rpx;
+  float: left;
+  font-size:30rpx;
+  padding-bottom:10rpx;
+  padding-left:20rpx;
+}
+
+
+.photo{
+  width:130rpx;
+  height:130rpx;
+  margin-left: 20rpx; 
+  position:relative;
+}
+
+.deleteIMG{
+  width: 40rpx;
+  height: 40rpx;
+  position:absolute;
+  top:-12rpx;
+  right:-16rpx;
+}
+
+.reasonpicker{
+  width: 680rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+  border:1px solid #222;
+  text-align: center;
+  line-height: 80rpx; 
+  margin: 0 auto;
+  font-size: 30rpx;
+}
+
+#usermemoinput{
+  width: 680rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  border:1px solid #222;
+  line-height: 80rpx; 
+  margin: 50rpx auto;
+  font-size: 30rpx;
+}
+
+#amount{
+  color: red;  
+  display:inline-block;
+  font-size: 50rpx;
+}
+.rmb{
+  width:30rpx;
+  display:inline-block;
+  height:35rpx;
+  vertical-align:baseline;
+  margin-right:10rpx;
+}
+
+.backend{
+  width: 600rpx;
+  height: 100rpx;  
+  line-height: 100rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.backendbefore{
+  position:absolute;
+  top:36rpx;
+  left:-40rpx;
+  width: 30rpx;
+  height: 30rpx;  
+  background-color:#f00;
+  border-radius:50rpx;
+}
+
+.backend1{
+  width: 680rpx;
+  height: 100rpx;  
+  line-height: 100rpx;
+  margin: 0 auto;
+  font-size:35rpx;
+}
+.backend2{
+  width: 680rpx;
+  height: 100rpx;  
+  font-size:24rpx;
+  line-height: 24rpx;
+  margin: 0 auto;
+}
+.submit{
+  position: fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100rpx;
+  text-align: center;
+  color:#fff;
+  line-height: 100rpx;
+  background-color: red;
+
+}

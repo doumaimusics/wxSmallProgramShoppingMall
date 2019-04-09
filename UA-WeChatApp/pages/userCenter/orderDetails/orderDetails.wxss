@@ -1,0 +1,166 @@
+.list_box{
+  margin-top:20rpx;
+  padding:25rpx 20rpx 0;
+  border-bottom: 2rpx solid #bebebe;
+}
+.with_h{
+    width:615rpx; 
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.with_h1{
+     width:110rpx; 
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.head_name,.main_box{
+  margin-bottom: 40rpx;
+}
+.stroe_head_name image{
+  width: 34rpx;
+  height:35rpx;
+  margin-right: 20rpx;
+}
+.stroe_head_name{
+  font-size: 36rpx;
+}
+.state{
+  font-size: 36rpx;
+  color: red;
+}
+.shop_text{
+  width:520rpx;
+  font-size:32rpx;
+  padding-left: 20rpx;
+}
+.shop_name{
+  width:166rpx;
+  height:166rpx;
+  display: block;
+  border: 2rpx solid #f3f3f3;
+  border-radius: 14rpx;
+}
+.pad_box{
+  padding-bottom: 22rpx;
+}
+.total{
+  text-align: right;
+  font-size:32rpx;
+}
+.txt_1{
+  color: red;
+}
+.color_b{
+  color:#6f6f6f;
+}
+.color_r{
+  color:red;
+  font-size:36rpx;
+}
+.btn_index{
+  width:100%;
+  padding:20rpx 0;
+  position: fixed;
+  bottom:0;
+  background: #fff;
+}
+.btn_index view{
+  width:160rpx;
+  height:60rpx;
+  background: #eaeaea;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-right: 16rpx;
+  /* border-radius: 14rpx; */
+}
+.btn_index view:first-child{
+  background: red;
+  color: #fff;
+}
+.shopTotal,.coupons,.freight{
+  width:670rpx;
+  margin-left:30rpx;
+  height:64rpx;
+  line-height: 64rpx;
+  background:#fff;
+  padding-right:30rpx;
+  font-size:32rpx;
+}
+.box_list_shop{
+  background:#fff;
+}
+.number_shop{
+  width:720rpx;
+  padding-right:30rpx;
+  height:84rpx;
+  line-height: 84rpx;
+  text-align: right;
+  font-size: 36rpx;
+}
+.number_shop text{
+  color: red;
+}
+
+.logistics_image{
+  width:48rpx; 
+  height:30rpx;
+  float: left;
+  padding-top: 50rpx;
+}
+
+.logistics_right_image{
+  width: 23rpx;
+  height: 40rpx;
+  position:relative;
+  padding-top:50rpx;
+}
+
+
+button[class="contact"]::after {
+  border: 0;
+  width:160rpx;
+height:60rpx;
+font-size:32rpx;
+line-height:60rpx;
+text-align:center;
+margin-right:16rpx;
+border-radius:14rpx;
+
+position:relative;
+display:block;
+margin-left:auto;
+padding-left:0px;
+padding-right:0px;
+box-sizing:unset;
+text-decoration:none;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#eaeaea;
+} 
+
+button[class="contact"] {
+  width:160rpx;
+height:60rpx;
+font-size:32rpx;
+line-height:60rpx;
+text-align:center;
+margin-right:16rpx;
+border-radius:14rpx;
+
+position:relative;
+display:block;
+margin-left:auto;
+padding-left:0px;
+padding-right:0px;
+box-sizing:unset;
+text-decoration:none;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#eaeaea;
+
+} 

@@ -1,0 +1,117 @@
+<!--pages/userCenter/3Dclay/3Dclay.wxml-->
+<view class='clay-wrapper' style='height:{{windowHeight}}px'>
+  <!-- 图片 -->
+  <view class='img-wrapper'>
+    <!-- 按钮 -->
+    <view class='btn-sty'>
+      <view class='default'><text id='3d' class="{{aggle == 'clay' ? 'actity' : ''}}" bindtap='aggleBtn'>身体参数</text></view>
+      <view class='default'><text id='foot' class="{{aggle == 'foot' ? 'actity' : ''}}" bindtap='aggleBtn'>足型参数</text></view>
+    </view>
+    <!-- 3D人体参数 -->
+    <view class='img-sty' style="display:{{aggle == 'clay' ? 'block' : 'none'}}">
+      <view class='clay-image'>
+        <image mode='widthFix'  src='{{clay}}'></image>
+      </view>
+      <view class='city-item data-clay11'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>肩宽 <text class='body-data'>{{bodyData.shoulder_breadth}}</text></view>
+      </view>
+      <view class='city-item data-clay12'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>胸围 <text class='body-data'>{{bodyData.chest_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay13'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>腰围 <text class='body-data'>{{bodyData.waist_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay14'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>臀围 <text class='body-data'>{{bodyData.pelvis_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay15'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>身高 <text class='body-data'>{{bodyData.body_height}}</text></view>
+      </view>
+      <view class='city-item data-clay16'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>颈裆 <text class='body-data'>{{bodyData.neck_croth_len}}</text></view>
+      </view>
+      <!--  -->
+      <view class='city-item data-clay21'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>臂长 <text class='body-data'>{{bodyData.arm_left_len}}</text></view>
+      </view>
+      <view class='city-item data-clay22'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>腿长 <text class='body-data'>{{bodyData.leg_len}}</text></view>
+      </view>
+      <view class='city-item data-clay23'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>腕围左 <text style='padding-left:63rpx;' class='body-data'>{{bodyData.wrist_left_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay24'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>腕围右 <text style='padding-left:63rpx;' class='body-data'>{{bodyData.wrist_right_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay25'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>颈围 <text class='body-data'>{{bodyData.neck_cirlen}}</text></view>
+      </view>
+      <view class='city-item data-clay26'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>腿围 <text class='body-data'>{{bodyData.thigh_left_cirlen}}</text></view> 
+      </view>
+    </view>
+    <!-- 足型参数 -->
+    <view class='img-sty' style="display:{{aggle == 'foot' ? 'block' : 'none'}};">
+      <view class='foot-image'>
+        <image mode='widthFix'  src='{{foot}}'></image>
+      </view>
+      <view class='city-item data-clay11'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>{{footData.FootTypeName}}</view>
+      </view>
+      <view class='city-item data-clay12'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>脚宽类型 <text class='body-data2'>{{footData.foot_breadth}}</text></view>
+      </view>
+      <view class='city-item data-clay13'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>脚背高度 <text class='body-data2'>{{footData.instep_high}}</text></view>
+      </view>
+
+      <view class='city-item data-foot1'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>左脚长 <text class='body-data2'>{{footData.leftLength}}</text></view>
+      </view>
+      <view class='city-item data-foot2'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>右脚长 <text class='body-data2'>{{footData.rightLength}}</text></view>
+      </view>
+      <view class='city-item data-foot3'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>左脚宽 <text class='body-data2'>{{footData.leftBreadth}}</text></view>
+      </view>
+      <view class='city-item data-foot4'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>右脚宽 <text class='body-data2'>{{footData.rightBreadth}}</text></view>
+      </view>
+      <view class='city-item data-foot5'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>左脚围 <text class='body-data2'>{{footData.leftFootCirlen}}</text></view>
+      </view>
+      <view class='city-item data-foot6'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>右脚围 <text class='body-data2'>{{footData.rightFootCirlen}}</text></view>
+      </view>
+      <view class='city-item data-foot7'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>左脚背围 <text style='padding-left:35rpx;' class='body-data2'>{{footData.leftInstepCirlen}}</text></view>
+      </view>
+      <view class='city-item data-foot8'>
+        <image mode='widthFix'  src='../../../resources/imgs/3dText.png'></image>
+        <view class='city-item-text'>右脚背围 <text style='padding-left:35rpx;' class='body-data2'>{{footData.rightInstepCirlen}}</text></view> 
+      </view>
+    </view>
+  </view>
+</view>

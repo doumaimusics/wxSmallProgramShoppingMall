@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "分享海报",
+  "usingComponents": {
+    "share-poster": "../../components/poster"
+  }
+}

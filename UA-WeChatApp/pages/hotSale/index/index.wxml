@@ -1,0 +1,16 @@
+
+  <view >
+  <!-- wx:for="{{mallLists}}" wx:key="index" wx:for-item='goodds' -->
+  <view class='mall_main clearfix' bindtap='details' wx:for="{{mallLists}}" wx:key="index" data-id="{{item.id}}" data-storeid="{{item.storeId}}" data-nama='{{item.type}}' data-off="{{off}}" id='{{index}}'>
+    <image src='{{item.imageUrl}}' class='img_box fl'></image>
+    <view class='fr txt_m'>
+        <image src='../../../resources/imgs/hot.png' class='img1'></image>
+        <view>{{item.name}}</view>
+        <view>
+              <text class='color_t'>￥<text>{{item.salePrice}}</text></text>
+              <text class="color_txt" style="text-decoration:line-through;display: {{ Number(item.salePrice) > Number(item.tagPrice)||item.salePrice==item.tagPrice ? 'none' : 'inline-block' }};">￥<text>{{item.tagPrice}}</text></text>
+        </view>
+    </view>
+  </view>
+  <view style='display:{{pageIndex>=messages?"block":"none"}}' class='noMore'>没有更多~</view>
+</view>

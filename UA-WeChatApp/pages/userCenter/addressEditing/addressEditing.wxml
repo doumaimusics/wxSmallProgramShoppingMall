@@ -1,0 +1,46 @@
+<view class='input_main'>
+  <view class='input_box'>
+    <input placeholder="请输入收件人姓名" bindinput="onInput" id="username" value="{{username != null ? username : ''}}" bindblur='onblur'></input>
+  </view>
+  <view class='input_box'>
+    <input placeholder="请输入收件人电话" type="number" placeholder-style="color:#7b7b7b;font-size:32rpx;" bindinput="onInput" maxlength="11" id="phone" value="{{phone != null ? phone : ''}}" bindblur='onblur'></input>
+  </view>
+  <view class='input_add'>
+    <view class="weui-clooseAddress" catchtap="sureAction" id="cityText">{{cityText}}</view>
+    <view hidden="{{isCity}}" class="selector">
+      <view class="inner_box">
+        <view class="header_box">
+          <view class="item l" data-act="cancel" data-mold="city" bindtap="ideChoice">取消</view>
+          <view class="item c"> </view>
+          <view class="item r" data-act="confirm" data-mold="city" bindtap="ideChoice">确定</view>
+        </view>
+
+        <picker-view class="picker_box" indicator-class="selected" value="{{cityValue}}" bindchange="cityChange">
+          <picker-view-column>
+            <view wx:for="{{provinces}}" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{citys}}" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{countys}}" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <view class="layer" data-act="cancel" data-mold="city" catchtap="ideChoice"></view>
+    </view>
+  </view>
+  <view class='input_txt'>
+    <input type='text' placeholder="请填写详细地址" bindinput="onInput" id="address" value="{{address != null ? address : ''}}" bindblur='onblur' maxlength="140" bindfocus='onfocus'></input>
+  </view>
+  <view class='img_btn_de' bindtap='choisePc'>
+    <block wx:if="{{pc}}">
+      <image src="{{img2}}" class='img_deb'></image>
+    </block>
+    <block wx:else>
+      <image src="{{img1}}" class='img_deb'></image>
+    </block>
+    <text>设为默认地址</text>
+  </view>
+</view>
+<view class='btn_add1' bindtap='btn' data-temporderid='{{tempOrderId}}'>确定</view>

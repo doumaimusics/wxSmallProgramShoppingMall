@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/info/index/index",
+    "pages/info/login/login",
+    "pages/info/nearbyStore/nearbyStore",
+    "pages/info/map/map",
+    "pages/info/recommend/recommend",
+    "pages/info/details/details",
+    "pages/info/detailsVahooGoods/detailsVahooGoods",
+    "pages/info/shoppingCart/shoppingCart",
+    "pages/info/temOrder/temOrder",
+    "pages/info/webView/webView",
+    "pages/info/applyInvoice/applyInvoice",
+    "pages/info/welcome/welcome",
+    "pages/info/rearch/rearch",
+    "pages/dealers/index/index",
+    "pages/dealers/getCoupons/getCoupons",
+    "pages/dealers/coupons/coupons",
+    "pages/userCenter/index/index",
+    "pages/userCenter/address/address",
+    "pages/userCenter/addressEditing/editaddress",
+    "pages/userCenter/myOrder/myOrder",
+    "pages/userCenter/orderDetails/orderDetails",
+    "pages/userCenter/orderDetails/logisticsDetail",
+    "pages/userCenter/refundReturn/refundView",
+    "pages/userCenter/refundReturn/returnView",
+    "pages/userCenter/refundReturn/addReturnNum",
+    "pages/userCenter/aboutUs/aboutUs",
+    "pages/info/alipay/alipay",
+    "pages/userCenter/payCenter/payCenter",
+    "pages/info/register/register",
+    "pages/userCenter/paymentSelect/paymentSelect",
+    "pages/userCenter/3Dclay/3Dclay",
+    "pages/hotSale/index/index",
+    "pages/info/category/category",
+    "pages/info/poster/poster"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "Under Armour",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#E61A23",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/info/index/index",
+        "text": "首页",
+        "iconPath": "resources/tabIcons/icInfo.png",
+        "selectedIconPath": "resources/tabIcons/icInfoSelected.png"
+      },
+      {
+        "pagePath": "pages/info/category/category",
+        "text": "分类",
+        "iconPath": "resources/tabIcons/hotSale.png",
+        "selectedIconPath": "resources/tabIcons/hotSaleSelect.png"
+      },
+      {
+        "pagePath": "pages/info/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "resources/tabIcons/shopcar.png",
+        "selectedIconPath": "resources/tabIcons/shopcarselect.png"
+      },
+      {
+        "pagePath": "pages/dealers/index/index",
+        "text": "智慧门店",
+        "iconPath": "resources/tabIcons/tap4.png",
+        "selectedIconPath": "resources/tabIcons/tap4active.png"
+      },
+      {
+        "pagePath": "pages/userCenter/index/index",
+        "text": "我的",
+        "iconPath": "resources/tabIcons/icUserCenter.png",
+        "selectedIconPath": "resources/tabIcons/icUserCenterSelected.png"
+      }
+    ]
+  }
+}

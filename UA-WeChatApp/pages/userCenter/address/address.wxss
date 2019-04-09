@@ -1,0 +1,106 @@
+.main_add{
+  width:750rpx;
+  background: #fff;
+}
+.name_t{
+    width:90rpx;  
+}
+.name_t1{
+    width:90rpx;  
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.touch-item {
+    font-size: 14px;
+    border-bottom: 2rpx solid #dddddd;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.add_txt{
+    width:1400rpx;
+    color: #333;
+    font-size:28rpx;
+    padding:30rpx 0 30rpx 20rpx;
+    line-height: 1.8;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(90rpx);
+    transform: translateX(90rpx);
+    margin-left: -90rpx;
+    float: left;
+}
+.box_add{
+   width:500rpx; 
+  margin-left:20rpx;
+}
+.box_add1{
+  width:500rpx;
+   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.edit_btn image{
+  width: 41rpx;
+  height:41rpx;
+  display: block;
+  position: relative;
+  top:35rpx;
+}
+.del {
+     background-color: red;
+     width: 90px;
+    padding:30rpx 0;
+    margin-left:30rpx;
+     display: flex;
+    flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     color: #fff;
+     -webkit-transform: translateX(90px);
+     transform: translateX(90px);
+     -webkit-transition: all 0.4s;
+     transition: all 0.4s;
+}
+.touch-move-active .add_txt,
+.touch-move-active .del {
+   -webkit-transform: translateX(0);
+   transform: translateX(0);
+}
+.btn_add{
+    width:750rpx;
+    height:95rpx;
+    line-height: 95rpx;
+    text-align: center;
+    color: #fff;
+    background:red;
+    position: fixed;
+    bottom:0;
+    left:0;
+}
+.default{
+    width:60rpx;
+    height:30rpx;
+    border: 2rpx solid #ea3c81;
+    line-height: 30rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+    border-radius: 10rpx;
+    margin-top:10rpx;
+    background: red;
+}
+@media only screen and (min-width: 0px) and (max-width: 330px){
+  .add_txt{
+    padding:30rpx 0 30rpx 35rpx;
+  }
+}
+@media only screen and (min-width: 330px) and (max-width: 370px){
+  .add_txt{
+    padding:30rpx 0 30rpx 30rpx;
+  }
+}

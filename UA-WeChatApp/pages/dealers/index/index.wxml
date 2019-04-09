@@ -1,0 +1,25 @@
+ <block wx:for='{{videos}}' wx:key="index">  
+    <view class='main_list' bindtap="getCoupons"  data-store_id="{{item.store_id}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-distance="{{item.distance}}" data-storeName="{{item.store_name}}"  data-address="{{item.address}}" data-arrimg='{{item.store_picture}}' style="display:{{ item.coupon_info == null ? 'blick' : 'block' }};">
+      <view class='stroe_id_name clearfix'>
+          <view class='fl stroe_name'>
+              <text class='text_stroe'>{{item.store_name}}</text>
+          </view>
+          <view class='fr stroe_distance'>
+              <text><text>{{item.distance}}</text></text>
+          </view>
+      </view>
+      <view class='grab_volume_main'>
+          <view class='address'>
+            {{item.address}}
+          </view> 
+          <view class='scanning-body'>
+          <!-- 人体 -->
+            <image class='ciay-image' style="display:{{item.isbodyScan? 'block' : 'none' }};" mode="aspectFit"  src='../../../resources/imgs/ciay3d.png'></image>
+          </view> 
+          <view class='scanning-foot'>
+          <!-- 足型 -->
+              <image class='scanning-image' style="display:{{ item.isfootScan? 'block' : 'none' }};" mode="aspectFit" src='../../../resources/imgs/scanning3d.png'></image>
+          </view> 
+      </view>
+    </view>
+ </block>  

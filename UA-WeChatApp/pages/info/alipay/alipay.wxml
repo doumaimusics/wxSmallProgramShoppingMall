@@ -1,0 +1,9 @@
+<!--支付宝支付-->
+<view class='warpper-Alipay'>
+    <view class='image-view'>
+      <image mode='aspectFill' src='https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/alipay.png'></image>
+      <view class='font-fwei'>请打开“支付宝”扫描屏幕</view>
+      <view class='font-fwei'>二维码完成支付</view>
+      <view class='font'>订单信息可在UA小程序中查看</view>
+    </view>
+</view>

@@ -1,0 +1,97 @@
+/* pages/info/register/register.wxss */
+.wrapper-register{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.swiper-image {
+  height: 100%;
+  width: 100%;
+  /*透明度*/
+  opacity: 0.9;
+}
+
+.login-box{
+  position: absolute;
+  bottom:90rpx;
+  left: 0;
+  padding: 0 100rpx;
+  box-sizing: border-box;
+}
+.login-box button{
+  margin: 0 auto;
+  height: 120rpx;
+  width: 568rpx;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 120rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.register-box{
+  position: absolute;
+  width: 100%;
+  height: 55%;
+  left: 0;
+  top: 45%;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.register-title{
+  width: 100%;
+  height: 160rpx;
+  text-align: center;
+  font-size: 42rpx;
+  line-height: 160rpx;
+  color: #000000;
+  /* font-weight: bold; */
+}
+.phone-Style{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1px solid #D8D8D8;
+}
+.mar-top{
+  margin-top: 20rpx;
+  display: flex;
+}
+.text-phone{
+  padding-left: 20rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.text-code{
+  flex: 3;
+  padding-left: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.text-btn{
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  padding-left: 28rpx;
+  color: red;
+  border: none !important;
+  background: #ffffff !important;
+}
+.login-btn{
+  margin-top: 80rpx;
+ 
+}
+.login-btn button{
+ height: 100rpx;
+ line-height: 100rpx;
+ background: #EB212F;
+ font-size: 32rpx;
+ color: #ffffff;
+ border-radius: 0;
+}
+button[class="text-btn"]::after {
+  border:0;
+}

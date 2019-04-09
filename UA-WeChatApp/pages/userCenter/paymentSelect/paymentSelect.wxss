@@ -1,0 +1,83 @@
+/* pages/userCenter/paymentSelect/paymentSelect.wxss */
+
+.paytype
+{
+  background-color: #fff;
+  width: 690rpx;
+  display:-webkit-box; 
+  display: flex;
+  justify-content:space-between;
+  margin:0 auto;
+  font-size:33rpx;
+}
+.payfgx
+{
+  width: 690rpx;
+  height:3rpx;
+  background-color: #ccc;
+  margin:0 auto;
+}
+.payimg
+{
+  width: 78rpx;
+  height: 78rpx;
+  align-items:center;  
+}
+
+.storepayment
+{
+  position: fixed;
+  left: 0;
+  bottom:0;
+  width: 100%;
+  line-height: 90rpx;
+  color: #fff;
+  text-align: center;
+  background-color: red;
+}
+.paytypetext
+{
+  align-items:center;
+}
+.paycomment
+{
+  width: 71rpx;
+  height: 34rpx;
+  align-items:center;
+}
+.paytypeleft
+{
+  display:-webkit-box; 
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+   
+}
+.paytypeleftitem
+{
+  padding-right: 30rpx;
+  justify-content:center;
+  align-items:center;
+}
+.paytyperight
+{
+  justify-content:center;
+  align-items:center;
+}
+.paytyperight radio
+{
+  margin-top:32rpx;
+  margin-bottom: 32rpx;
+}
+radio {
+      display: block;
+}
+ 
+radio .wx-radio-input {
+      display: block;
+}
+ 
+radio .wx-radio-input.wx-radio-input-checked {
+      background-color:red!important;
+      border-color:red!important;
+}

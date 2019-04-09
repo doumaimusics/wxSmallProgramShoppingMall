@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "Under Armour",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "horserunlamp": "../../components/lamp"
+  }
+}

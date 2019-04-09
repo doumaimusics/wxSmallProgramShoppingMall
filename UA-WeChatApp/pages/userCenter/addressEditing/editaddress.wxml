@@ -1,0 +1,51 @@
+<view class='container' style=''>
+  <form bindsubmit='addressFormSubmit'>
+    <input type='text' name='name' maxlength="11" placeholder='请输入收件人名称' value='{{addressEntity.name}}'></input>
+    <input type='text' name='mobile' type="number" maxlength="11" placeholder='请输入收件电话' value='{{addressEntity.mobile}}'></input>
+    <input type='text' name='region' placeholder='省、市、区' bindtap='showPickerView' disabled='true' value="{{prvName}}{{cityName}}{{areaName}}" />
+    <input type='text' name='detail' maxlength="100" placeholder='请填写详细地址' value='{{addressEntity.detail}}'></input>
+      <input type='text' name='mail' maxlength="100" placeholder='请填邮箱信息' value='{{addressEntity.mail}}'></input>
+
+    <view class='img_btn_de' bindtap='checkboxChange'>
+      <block wx:if="{{addressEntity.isdefault == false||addressEntity.isdefault == 'false'}}">
+        <block wx:if="{{isdefault==false||isdefault=='false'}}">
+          <image src="{{img1}}" class='img_deb'></image>
+        </block>
+        <block wx:else>
+          <image src="{{img2}}" class='img_deb'></image>
+        </block>
+        <text>设为默认地址</text>
+      </block>
+    </view>
+
+    <!-- <block wx:if="{{addressEntity.isdefault ==0}}">
+      <checkbox-group name='isdefault' bindchange='checkboxChange'>
+        <checkbox value='1' checked='true' style="margin-top: 20rpx;align-items:center;font-size: 32rpx;">
+          设为默认地址
+        </checkbox>
+      </checkbox-group>
+    </block> -->
+
+    <!-- <view class='input_add' hidden="{{!ishiddenPickerView}}" form-type='submit'>确定</view> -->
+    <button class='input_add' hidden="{{!ishiddenPickerView}}" form-type='submit'>确定</button>
+  </form>
+  <view class='picker-viewlayout' wx:if="{{!ishiddenPickerView}}">
+  <view class='address_picker-view'>
+    <view class='pickerButtonLayout'>
+      <view class='pickerButton' bindtap='cancelPicker'>取消</view>
+      <view class='pickerButton' bindtap='OKPicker'>确定</view>
+    </view>
+    <picker-view indicator-style="height: 50px;" bindchange='pickerChange' value="{{valueindext}}">
+      <picker-view-column>
+        <view wx:for="{{prv}}" style="line-height: 50px;margin-left:20px" wx:key="index">{{item.PRV_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{city}}" style="line-height: 50px;margin-left:20px" wx:key="index">{{item.CITY_NAME}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{area}}" style="line-height: 50px;margin-left:20px" wx:key="index">{{item.CITY_AREA_NAME}} </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  </view>
+</view>

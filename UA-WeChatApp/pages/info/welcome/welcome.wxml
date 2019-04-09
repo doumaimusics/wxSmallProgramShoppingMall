@@ -1,0 +1,14 @@
+<view class='welcome-wrapper' catchtouchmove='true'>
+  <image mode='scaleToFill' style='height:{{windowHeight}}px;' src='https://wx.3dculab.com/uaxcxv1.0.1/Content/welcomeXCX.png'></image>
+  <view class='welcome-button' style='display:{{welcomeShow==2?"block":"none"}};'>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">账户授权</button>
+    <view>点击按钮，允许授权后，才可以开始扫描</view>
+  </view>
+  <view class='welcome-text' style='display:{{welcomeShow==1?"block":"none"}};'>
+    <view style='font-size: 70rpx;'>登录成功！</view>
+    <view style='margin-top:30rpx;'>请在店员协助下，完成扫码。</view>
+  </view>
+  <view class='welcome-button' style='display:{{welcomeShow==1?"block":"none"}};'>
+    <button bindtap='openIndex'>进入商城首页</button>
+  </view>
+</view>

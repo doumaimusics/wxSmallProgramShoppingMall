@@ -1,0 +1,81 @@
+<view class="container">
+  <!-- 跑马灯 -->
+  <view class="horse-run-lamp">
+    <horserunlamp lampText="{{msg}}" />
+  </view>
+  <!-- 轮播图 -->
+  <view class="swiper-box">
+    <!-- 搜索 -->
+    <view class='search-wrapper' style='display:block;'>
+      <view class='search-clss' bindtap='openRearch'>
+        <image mode='widthFix' src='http://img.fansnew.com/wwwwww@2x.png'></image>
+        <text>搜索商品</text>
+      </view>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColors}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circulars}}" indicator-active-color="{{indicatorActiveColor}}" style='height:{{Height}}'>
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.imageUrl}}" data-databaseName='{{item.name}}' data-collectionName='{{item.typename}}' bindtap='openReommend' data-array='{{item}}' bindload='imgHeight' mode="widthFix" class="slide-image" width="100%" id="{{item.id}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 十个品类区 -->
+  <view class='accessories'>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[0].imageUrl}}' data-array='{{Promotions[0]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[2].imageUrl}}' data-array='{{Promotions[2]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[4].imageUrl}}' data-array='{{Promotions[4]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[6].imageUrl}}' data-array='{{Promotions[6]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[8].imageUrl}}' data-array='{{Promotions[8]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[1].imageUrl}}' data-array='{{Promotions[1]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[3].imageUrl}}' data-array='{{Promotions[3]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[5].imageUrl}}' data-array='{{Promotions[5]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[7].imageUrl}}' data-array='{{Promotions[7]}}'></image>
+    </view>
+    <view class='accessoriescontent'>
+      <image mode='widthFix' bindtap='openReommend' src='{{Promotions[9].imageUrl}}' data-array='{{Promotions[9]}}'></image>
+    </view>
+  </view>
+  <!-- 两个banner -->
+  <view class='activit'>
+    <view wx:for='{{CategoryLists}}' wx:key='{{indexs}}' wx:for-item='items' wx:for-index='indexs'>
+      <!-- <view class='CategoryTitle'>{{items.name}}</view> -->
+      <image class='activitImg' mode='widthFix' bindtap='openReommend' data-array='{{items}}' src="{{items.imageUrl}}"></image>
+      <view class='diagram'>
+        <view class='diagramMes' bindtap='details' data-id="{{item.id}}" data-storeid="{{item.storeId}}" data-nama='{{item.type}}' data-off="{{off}}" wx:for='{{items.products}}' wx:key='{{index}}' wx:for-item='item' wx:for-index='index'>
+          <image class='diagramImg' src="{{item.imageUrl}}"></image>
+          <view class='diagramTag'>
+            <text>{{item.name}}{{item.pattern}}</text>
+          </view>
+          <view class='diagramPrice'>
+            <text class='salePrice'>￥{{item.salePrice}}</text>
+            <text class='tagPrice' style="display: {{ Number(item.salePrice) > Number(item.tagPrice)||item.salePrice==item.tagPrice ? 'none' : 'inline-block' }};">
+              ￥{{item.tagPrice}}
+            </text>
+          </view>
+        </view>
+          </view>
+      </view>
+    </view>
+  </view>
+  <!-- 客服 -->
+  <button class='contact-class' hover-class='none' open-type="contact">
+    <image mode='widthFix' src='http://img.fansnew.com/customer.png'></image>
+  </button>

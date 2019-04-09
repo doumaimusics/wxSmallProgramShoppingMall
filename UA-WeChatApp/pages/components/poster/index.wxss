@@ -1,0 +1,78 @@
+.winnerPoster {
+  min-height: 100vh;
+  transition: opacity 0.2s ease-in-out;
+  background-color: #0d0d0d;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+}
+
+.winnerPoster.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tip {
+  padding-top: 300rpx;
+  box-sizing: border-box;
+  text-align: center;
+  color: #e9e9e9;
+  font-size: 30rpx;
+}
+
+.canvasShare {
+  position: absolute;
+  top: -100000px;
+  width: 2250rpx;  /*三倍 */
+  height: 3360rpx;  /*三倍 */ 
+}
+
+.img-box {
+  height: 100vh;
+}
+
+.holder {
+  height: 102%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.img-priview {
+  display: block;
+  width: 690rpx;
+  height: 1030.4rpx;
+  /* margin: 0 auto; */
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%,-50%);
+}
+
+.saveImg {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none;
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  background-color: #3a3a3a;
+  color: #fff;
+  z-index: 1;
+}
+.change_btn{
+  background: #CA0907;
+}
+
+.slideUp {
+  transform: translateY(0);
+}
+
+.saveImg-hover {
+  background-color: #575757;
+}

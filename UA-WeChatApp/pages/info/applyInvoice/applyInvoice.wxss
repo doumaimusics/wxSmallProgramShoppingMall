@@ -1,0 +1,95 @@
+page{
+  background: #ffffff; 
+}
+.applyInvoice-wrapper{
+  width: 100%;
+  height: auto;
+}
+.applyInvoice-tab{
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 30rpx 10%;
+  box-sizing: border-box;
+}
+.tabStyle{
+  /* width: 20%; */
+  height: 45rpx;
+  flex: 1;
+  text-align: center;
+  line-height: 45rpx;
+  border: 2rpx solid #000000;
+  padding: 5rpx 0;
+  font-size:32rpx;
+}
+.select-tab{
+  background: #000000;
+  color: #ffffff;
+}
+.no-select-tab{
+  background: #ffffff;
+  color: #000000;
+}
+/*  内容  */
+.applyInvoice-content{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.applyInvoice-personal{
+  width: 100%;
+  height: auto;
+}
+.input-border{
+  width: 100%;
+  height: 70rpx;
+  margin-top: 14rpx;
+  border: 1rpx solid #000000;
+}
+.Required{
+  color: red;
+  padding-left: 10rpx;
+  line-height: 85rpx
+}
+.input-middle{
+  display:flex;
+}
+.inputStyle{
+  width: 90%;
+  height: 70rpx;
+  padding-left: 35rpx;
+  display: inline-block;
+  font-size:30rpx;
+}
+
+
+.post_btn_sty{
+  width: 100%;
+  height: 80rpx;
+  position: fixed;
+  left: 0;
+  bottom: 50rpx;
+  padding: 0 10%;
+  box-sizing: border-box;
+  display: flex;
+}
+.post_btn_sty button{
+  width: 30%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 0;
+  flex: 1;
+  
+}
+ .post_btn_sty button:nth-child(1){
+  margin-right: 5%;
+  background: #E70012;
+  color: #ffffff;
+}
+.post_btn_sty button:nth-child(2){
+  margin-left: 5%;
+  color: #000000;
+  border: 2rpx solid #000000;
+} 

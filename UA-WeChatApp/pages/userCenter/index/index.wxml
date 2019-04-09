@@ -1,0 +1,159 @@
+<view class='name_head'>
+  <view class="user_head">
+    <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" hover-class="none">
+      <image src='{{weixinUserInfo.avatarUrl}}' class='photo'></image>
+    </button>
+    <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" hover-class="none">{{weixinUserInfo.nickName}}</button>
+  </view>
+</view>
+<view class="order_list">
+  <button class='clearfix btnStyle' id='3' data-index="0" open-type="getUserInfo" hover-class="none" bindgetuserinfo="userInfoHandler">
+    <view class="my_order">
+      <text>我的订单</text>
+      <image src='../../../resources/imgs/right_img.png'></image>
+    </view>
+  </button>
+  <view class="lines"></view>
+  <view class="order_box">
+    <button class='clearfix btnStyle' id='3' data-index="0" open-type="getUserInfo" hover-class="none" bindgetuserinfo="userInfoHandler">
+      <view class="item box1">
+        <image src='http://img.fansnew.com/listss.png' class="imgs1"></image>
+        <text>全部订单</text>
+        <!-- <view class="tips">1</view> -->
+      </view>
+    </button>
+    <button class='clearfix btnStyle' id='3' open-type="getUserInfo" data-index="101" hover-class="none" bindgetuserinfo="userInfoHandler">
+      <view class="item box2 {{orderTypeNums.ToPay?'show':''}}">
+        <image src='http://img.fansnew.com/mmm.png' class="imgs2"></image>
+        <text>待付款</text>
+        <view class="tips">{{orderTypeNums.ToPay}}</view>
+      </view>
+    </button>
+    <button class='clearfix btnStyle' id='3' open-type="getUserInfo" data-index="105" hover-class="none" bindgetuserinfo="userInfoHandler">
+      <view class="item box3 {{orderTypeNums.ToDelivery?'show':''}}">
+        <image src='http://img.fansnew.com/carrr.png' class="imgs3"></image>
+        <text>待发货</text>
+        <view class="tips">{{orderTypeNums.ToDelivery}}</view>
+      </view>
+    </button>
+    <button class='clearfix btnStyle' id='3' open-type="getUserInfo" data-index="115" hover-class="none" bindgetuserinfo="userInfoHandler">
+      <view class="item box4 {{orderTypeNums.ToSign?'show':''}}">
+        <image src='http://img.fansnew.com/boxxx.png' class="imgs4"></image>
+        <text>待收货</text>
+        <view class="tips">{{orderTypeNums.ToSign}}</view>
+      </view>
+    </button>
+  </view>
+</view>
+<view class="my_list">
+  <button class='clearfix btnStyle' open-type="getUserInfo" id='1' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <image class="dclay" mode='aspectFit' src='http://img.fansnew.com/ddooddx.png'></image>
+    <view>
+      <text>3D人体参数</text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+      <view class="lines"></view>
+    </view>
+  </button>
+  <button class='clearfix btnStyle' open-type="getUserInfo" id='4' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <image class="dclay" mode='aspectFit' src='http://img.fansnew.com/address1.png'></image>
+    <view>
+      <text>地址管理</text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+      <view class="lines"></view>
+    </view>
+  </button>
+  <button class='clearfix btnStyle' id='0' open-type="getUserInfo" hover-class="none" bindgetuserinfo="userInfoHandler">
+    <image class="dclay" mode='aspectFit' src='http://img.fansnew.com/customers.png'></image>
+    <view>
+      <text>联系我们</text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+      <view class="lines"></view>
+    </view>
+  </button>
+  <button class='clearfix btnStyle' id='5' open-type="getUserInfo" hover-class="none" bindgetuserinfo="userInfoHandler">
+    <image class="dclay" mode='aspectFit' src='http://img.fansnew.com/abouts.png'></image>
+    <view class="hideborder">
+      <text>关于我们</text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </button>
+</view>
+<!-- <view class='list_li'> -->
+<!-- bindtap='openClay' -->
+<!-- <button class='clearfix btnStyle' open-type="getUserInfo" id='1' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/3dclay.png' class='img1'></image>
+      <text>3D人体参数</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </button> -->
+<!-- <view class='clearfix' bindtap='openClay'>
+      <view class='fl textred'>
+          <image mode='aspectFit' src='../../../resources/imgs/3dclay.png' class='img1'></image>
+          <text>3D人体参数</text>
+      </view>
+      <view class='fr'>
+          <text></text>
+          <image src='../../../resources/imgs/right_img.png' class='img'></image>
+      </view>
+    </view> -->
+<!-- <button class='clearfix btnStyle' open-type="getUserInfo" id='2' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/shoppingCart.png' class='img1'></image>
+      <text>购物车</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </button>
+  <button class='clearfix btnStyle' open-type="getUserInfo" id='3' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/myOrder.png' class='img1'></image>
+      <text>我的订单</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </button>
+  <button class='clearfix btnStyle' open-type="getUserInfo" id='4' hover-class="none" bindgetuserinfo="userInfoHandler">
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/address.png' class='img1'></image>
+      <text>地址管理</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </button>
+  <view class='clearfix' bindtap='makeCall'>
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/phone.png' class='img1'></image>
+      <text>联系我们</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </view>
+  <view class='clearfix' bindtap='openAboutUs'>
+    <view class='fl textred'>
+      <image mode='aspectFit' src='../../../resources/imgs/aboutUs.png' class='img1'></image>
+      <text>关于我们</text>
+    </view>
+    <view class='fr'>
+      <text></text>
+      <image src='../../../resources/imgs/right_img.png' class='img'></image>
+    </view>
+  </view> -->
+<!-- </view> -->
+<view class="toast" style="height: {{ windowHeight }}px;" hidden="{{house}}" bindtap="hide"></view>
+<view class="ast" hidden="{{lNull}}">
+  <view class="list1">
+    <view class="list_01">积分功能暂未开放</view>
+  </view>
+</view>

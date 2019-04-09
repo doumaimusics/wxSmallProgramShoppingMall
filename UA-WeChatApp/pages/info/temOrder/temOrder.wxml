@@ -1,0 +1,137 @@
+<view> 
+  <view class='main_box' bindtap='addTxt' data-temporderid='{{tempid}}'>
+    <view class='add_img'>
+      <image src='../../../resources/imgs/img_m.png'></image>
+    </view>
+    <view class='add_txt clearfix'>
+        <view class='fl name_add'>
+            <view class='name_add1'>{{add.name}}</view>
+            <view class='default' style="display: {{ add.isDefault == 'True'||add.isDefault == true ? 'block' : 'none' }};">默认</view>
+        </view>
+        <view class='fl box_add'>
+            <view style='display:{{add.name==undefined?"block":"none"}};line-height:40rpx;text-align:right;'>您还没有收货地址</view>
+            <view>{{add.mobile}}</view>
+            <view class='box_add1'>{{add.provinceName}}{{add.cityName}}{{add.districtName}}{{add.address}}</view>
+        </view>
+        <view class='edit_btn fr' style='top:{{add.name==undefined?"0":"26rpx"}}'>
+          <image src='../../../resources/imgs/left.png'></image>
+        </view>
+    </view>
+  </view>
+  <view class="filterate-item" wx:for="{{orderTemp.stores}}" wx:key="{{index}}" wx:for-item="store_list"> 
+    <view class='list_box'>
+      <view  class='clearfix head_name'>
+          <view class='fl stroe_head_name'>
+              <image src='../../../resources/imgs/ico_shop.png'></image>
+              <text>{{store_list.storeName}}</text>
+          </view>
+      </view>
+      <view class='pad_box'>
+        <view  class='clearfix main_box1'  wx:for="{{store_list.products}}" wx:key="{{index}}" wx:for-item="product_list">
+          <image class="fl shop_name" mode='aspectFit' src="{{product_list.imageUrl}}"></image>
+          <view class='fl shop_text'>
+              <view class='nowrap'>{{product_list.productName}}</view>
+              <view class='color_b'><text>颜色：{{product_list.colorName}}    {{product_list.sizeName=='0'?'': '尺码：'+product_list.sizeName}}</text></view>
+              <view class='clearfix'>
+                  <view class='fl color_r'>数量：x<text>{{product_list.count}}</text></view>
+                  <view class='fr color_r'>￥<text>{{product_list.salePrice}}</text></view>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='box_list_shop' style='padding-bottom:100rpx;' wx:for='{{orderTemp.stores}}' wx:key='{{index}}'>
+        <view class='coupons clearfix' bindtap='choiceDiscount' data-length='{{coupon.length}}' data-storeid='{{item.storeId}}'>
+            <view class='fl'>发票：<text>{{applynvoice.radioSelect==undefined?'不需要':applynvoice.radioSelect}}</text></view>
+            <view class='fr'>
+              <image class='imageSty' src='../../../resources/imgs/marketTitle.png'></image>
+            </view>
+        </view>
+        <view class='freight clearfix {{items.length!==0?"bodshow":""}}' >
+            <view class='fl'>优惠码：</view>
+            <view class='Discount-input' style='display:{{CouponCodeMsg == ""?"block":"none"}}'>
+              <input placeholder="输入优惠码" bindinput='getCouponCode'></input>
+              <button class='Use-Btn' disabled='{{CouponCodeBtn}}' data-temporderid='{{tempid}}' data-storeid='{{item.storeId}}' bindtap='UseCouponCode'>使用</button>
+            </view>
+            <view class='fr'  style='display:{{CouponCodeMsg == "" ? "none":"block"}}'>{{CouponCodeMsg}}</view>
+        </view>
+         <view class='freight selectCoupon ' style='border-bottom:0rpx;' wx:if="{{items.length!==0}}">
+           <view class='clearfix' bindtap="handelUsableCoupon">
+             <view class='fl'>
+               可用优惠：
+               <text class="usableCoupon" wx:if="{{!couponItem}}">
+                  <text>{{couponsNum}}张可用优惠</text>
+               </text>
+                <text class="usableCoupon" wx:else>
+                  <text>全场通用{{couponItem}}折</text>
+               </text>
+             </view>
+            <view class='fr selectUseableCoupon {{isActive?"active":""}}'>
+              <image class='imageSty' src='../../../resources/imgs/marketTitle.png'></image>
+            </view>
+           </view>
+           <view wx:if="{{couponsNum}}">
+            <radio-group class="radio-group {{isActive?'active':''}}" bindchange="handelSelect" >
+                <label class="radio" wx:for="{{items}}" wx:key="items.id"><radio value="{{item.address+'-'+item.discount_desc}}"/><text style="vertical-align:middle;">全场通用{{item.discount_desc}}折优惠</text></label>
+            </radio-group>
+           </view>
+        </view>
+        <view style='height:20rpx;background:#F0F0F0;'></view>
+        <view class='shopTotal clearfix' style='border-bottom:0rpx;'>
+            <view class='fl'>商品总额：</view>
+            <view class='fr'>￥ {{store_list.storeAmount}}</view>
+        </view>
+        <view class='freight clearfix' style='border-bottom:0rpx;'>
+            <view class='fl'>运费：</view>
+            <view class='fr'>￥ {{orderTemp.stores[0].freight}}</view>
+        </view>
+        <!-- <view class='freight clearfix' style='border-bottom:0rpx;'>
+            <view class='fl'>优惠券优惠：</view>
+            <view class='fr'>- ￥ {{couponItem}}</view>
+        </view> -->
+        <view class='freight clearfix' wx:for='{{item.activitys}}' wx:key="{{index}}" wx:for-item="activitys_list" style='border-bottom:0rpx;'>
+            <view class='fl'>{{activitys_list.activityName}}</view>
+            <view class='fr'>- ￥ {{activitys_list.activityPrice}}</view>
+        </view>
+        <view class='number_shop'>共{{orderTemp.numbers}}件商品，合计：<text>￥{{store_list.realPay}}</text></view>
+    </view>
+  </view>
+</view>
+
+<!-- 支付宝微信扫码支付 -->
+<view style='height:24rpx;'></view>
+<radio-group style='background-color:#fff;height:280rpx;display: {{ isStore?"block" : "none"}};' bindchange="radioChange">  
+  <!--pay type start-->
+<view style='background-color:#fff;height:280rpx;'>  
+  <view class="paytype">
+    <view class="paytypeleft">
+      <image class="payimg paytypeleftitem" src="https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/wxpay.png"></image>
+      <text class='paytypetext paytypeleftitem'>微信支付</text>
+      <!-- <image class='paycomment paytypeleftitem' src="https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/comment.png"></image> -->
+    </view>
+    <view class="paytyperight">
+      <radio value="2" checked="true"/>
+    </view>
+  </view>
+  <view class="payfgx"></view>
+    <view class="paytype">
+      <view class="paytypeleft">
+        <image class='payimg paytypeleftitem' src="https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/alipay.png"></image>
+        <text class='paytypetext paytypeleftitem'>支付宝支付</text> 
+      </view>
+      <view class="paytyperight">
+        <radio value="1" />
+      </view> 
+    </view>
+  </view>
+  <!--  -->
+  <view class='storepayment' bindtap='goPay'>支付</view>
+<!--pay type end-->
+</radio-group>
+
+
+<view class='btn_payment clearfix' style='display: {{ isStore?"none" : "flex"}};'>
+    <view class='fl'>实付：￥{{orderTemp.realPay}}</view>
+    <view class='fr' bindtap='goPay'>去支付</view>
+     <!-- <view class='fr' bindtap='applyInvoice'>申请开票</view>  -->
+</view>

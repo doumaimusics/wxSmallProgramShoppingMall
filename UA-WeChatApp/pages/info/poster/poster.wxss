@@ -1,0 +1,12 @@
+.poster{
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.poster>canvas{
+   position: absolute;
+   top: 100000px;
+}

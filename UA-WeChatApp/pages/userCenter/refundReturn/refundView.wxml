@@ -1,0 +1,32 @@
+<view class='container'>
+    <view class='container1'>
+          <view class="sectiontitle">退款原因</view>
+          <picker bindchange="bindPickerChange" value="{{reasonIndex}}" range="{{arrayReason}}">
+            <view class="reasonpicker">
+              {{reasonIndex==-1?'请选择退款原因': arrayReason[reasonIndex]}}
+            </view>
+          </picker>
+          <textarea maxlength="100" placeholder="补充说明" id="usermemoinput" value="{{userMemo}}" bindblur="onuserMemoblur" bindinput='onuserMemoblur'/>
+          <!-- <picker style='width:190rpx;float:left;' bindchange="photoPickerChange" value="{{photoIndex}}" range="{{arrayPhoto}}">
+            <view class="uploadimglist">
+              <image class="photo" mode="aspectFit" src="{{photourl}}"></image>
+            </view>
+          </picker>
+          <image bindtap='deleteIMGbtn' class='deleteIMG' src="../../../resources/imgs/deleteIMG.png" style="display:{{photoids.length!=0 ? 'flex': 'none'}}"></image>
+            <span style="font-size:30rpx;top:{{photoids.length!=0 ? '110rpx': '150rpx'}};position:relative;">(上传凭证，最少一张)</span> -->
+
+      </view><!--container1 end-->
+      <view class='container2'>
+            <view class='sectiontitle'>退款金额：<image class="rmb" mode="aspectFit" src="../../../resources/imgs/RMB.png"></image><span id='amount'>{{amount}}</span></view>
+            <view class='fgx'></view>
+            <view class='backend'>
+            <view class='backendbefore'></view>
+                  <view class='backend1'>退回原支付账户</view>
+                  <view class='backend2'>到账时间：信用卡需要10个工作日，其他途径需要5个工作日</view>
+            </view>
+      </view>
+      <!-- <view  class='message'>{{pagemessage}}</view> -->
+
+   
+</view>
+<view class="submit" bindtap='submit'>提交申请</view>

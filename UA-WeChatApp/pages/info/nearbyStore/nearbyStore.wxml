@@ -1,0 +1,12 @@
+<block wx:for="{{videos}}" wx:key="index">
+    <view class='map_store' bindtap='map' data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}">
+        <view class='name_id'>
+            <view class='name_store'>{{item.store_name}}</view>
+            <view class='name_t'>
+                <view class='distance' style="display: {{ index == '0' ? 'block' : 'none' }};">离我最近</view>
+                <view class='loc_t'>{{item.distance}}</view>
+            </view>
+        </view>
+        <view class='address'>{{item.address}}</view>
+    </view>
+</block>

@@ -1,0 +1,136 @@
+<view>
+  <!-- 订单编号信息 -->
+  <view style='background:#fff; padding:20rpx;font-size:32rpx;line-height:1.7;color:#333;'>
+    <view>
+      <image src='../../../resources/imgs/orderdetails_oder_ico.png' style='height:40rpx;width:36rpx;position:relative;top:8rpx;'></image>
+      <text style="color:red;margin-left:20rpx;">{{orderDetail.text}}</text>
+      <text style="color:#a0a0a0;">（微信支付）</text>
+    </view>
+    <view>订单编号：
+      <text style="color:#a0a0a0;">{{orderDetail.orderNo}}</text>
+    </view>
+    <view>订单时间：
+      <text style="color:#a0a0a0;">{{orderDetail.creatDate}}</text>
+    </view>
+  </view>
+  <!-- 用户地址信息 -->
+  <view class='clearfix' style='background:#fff; padding:20rpx;margin-top:20rpx;font-size:32rpx;line-height:1.7;color:#333'>
+    <image class='fl' src='../../../resources/imgs/orderdetails_address_ico.png' style='width:48rpx;height:56rpx;margin:24rpx 20rpx 0 0;'></image>
+    <view class='fl'>
+      <view class='clearfix'>
+        <text class='with_h1 fl'>{{orderDetail.addressInfo.name}}</text>
+        <text style='margin-left:20rpx;' class='fl'>{{orderDetail.addressInfo.mobile}}</text>
+      </view>
+      <view class='with_h'>{{orderDetail.addressInfo.provinceName}}{{orderDetail.addressInfo.cityName}}{{orderDetail.addressInfo.districtName}}{{orderDetail.addressInfo.detail}}</view>
+    </view>
+  </view>
+  <!-- 物流信息 -->
+  <view class='clearfix' style="background:#fff; margin-top:20rpx;font-size:32rpx;line-height:1.7;color:#333; display:{{(orderDetail.status=='101'||orderDetail.status=='105'||orderDetail.status=='110'||orderDetail.status=='125'||orderDetail.status=='106'||orderDetail.status=='126'||orderDetail.status=='127') ?'none': 'block'}}">
+    <view style='padding:20rpx; border-bottom: 2rpx solid #bebebe;'>
+      <view>承运公司：
+        <text style="color:#a0a0a0;">{{orderDetail.logisticsInfo.name}}</text>
+      </view>
+      <view>快递单号：
+        <text style="color:#a0a0a0;">{{orderDetail.logisticsInfo.code}}</text>
+      </view>
+    </view>
+    <!--  -->
+    <view class='detailLogistics' bindtap='detailLogistics' style='padding:20rpx;border-bottom:8rpx #F0F0F0 solid;'>
+      <image class='logistics_image' style="padding-top:{{logisticsDetail == '暂无物流信息' ? '15rpx': '50rpx'}}" src='../../../resources/imgs/orderdetails_logistics_ico.png'></image>
+      <view style="padding-left: 70rpx;">
+        <text style="color:#000000; font-size:30rpx; width: 610rpx; float:left;">{{logisticsDetail.content}}</text>
+        <text style="font-size:25rpx; display:{{logisticsDetail == '暂无物流信息' ? 'none': 'inline'}}; float:left;">{{logisticsDetail.datetime}}</text>
+        <image src="../../../resources/imgs/right_logistic_img.png" class="logistics_right_image" style="padding-top:{{logisticsDetail == '暂无物流信息' ? '0rpx': '50rpx'}}"></image>
+      </view>
+    </view>
+
+    <!-- 退货物流相关信息 -->
+    <view class='clearfix' style="background:#fff; padding:20rpx; margin-top:20rpx;font-size:32rpx;line-height:1.7;color:#333; display:{{(orderDetail.status != '130' && orderDetail.status !='133' && orderDetail.status != '131' && orderDetail.status != '132') ? 'none': 'block'}}">
+      <view style="display:{{orderDetail.status == '130' ? 'block': 'none'}};border-bottom:20rpx #F0F0F0 solid;">
+        <view>商家收货信息</view>
+        <view style='padding:20rpx;'>
+          <view>收货人：
+            <text style="color:#a0a0a0;">{{GetSendBackInfo.receiver}}</text>
+          </view>
+          <view>电话号码：
+            <text style="color:#a0a0a0;">{{GetSendBackInfo.phoneNo}}</text>
+          </view>
+          <view>收货地址：
+            <text style="color:#a0a0a0;">{{GetSendBackInfo.address}}</text>
+          </view>
+        </view>
+      </view>
+      <view style="display:{{orderDetail.status == '130' ? 'none': 'block'}};">
+        <view>退货物流信息</view>
+        <view style='padding:20rpx;'>
+          <view>承运公司：
+            <text style="color:#a0a0a0;">{{GetSendBackInfo.expressName}}</text>
+          </view>
+          <view>快递单号：
+            <text style="color:#a0a0a0;">{{GetSendBackInfo.expressNo}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单内容 -->
+  <view style='background:#fff;'>
+    <view class='list_box'>
+      <view class='clearfix head_name'>
+        <view class='fl stroe_head_name'>
+          <image src='../../../resources/imgs/ico_shop.png'></image>
+          <text>{{orderDetail.storeName}}</text>
+        </view>
+      </view>
+      <view class='pad_box' wx:for="{{orderDetail.products}}" wx:key="index">
+        <view class='clearfix main_box'>
+          <image class="fl shop_name" mode='aspectFit' src="{{item.imageUrl}}"></image>
+          <view class='fl shop_text'>
+            <view>{{item.productName}}</view>
+            <view class='color_b'>
+              <text>颜色：{{item.colorName}}  {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text>
+            </view>
+            <view class='clearfix'>
+              <view class='fl color_b'>数量：x
+                <text>{{item.count}}</text>
+              </view>
+              <view class='fr color_r'>￥
+                <text>{{item.salePrice}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='shopTotal clearfix'>
+        <view class='fl'>商品总价：</view>
+        <view class='fr'>￥ {{orderDetail.orderAmount}}</view>
+      </view>
+      <view class='freight clearfix'>
+        <view class='fl'>运费：</view>
+        <view class='fr'>￥{{orderDetail.frightAmount}}</view>
+      </view>
+      <view class='coupons clearfix' wx:for='{{orderDetail.activities}}' wx:key='{{index}}' style="display:{{orderDetail.discountAmount>0 ? 'block' : 'none'  }}">
+        <view class='fl'>{{item.activityName}}:</view>
+        <view class='fr'>- ￥{{item.activityPrice}}</view>
+      </view>
+    </view>
+    <view class='number_shop'>应付款：
+      <text>￥{{orderDetail.payAmount}}</text>
+    </view>
+  </view>
+  <view style='height:90rpx;'></view>
+  <!-- 按钮区 -->
+  <view class='clearfix btn_index'>
+    <view class='fr' style="display:{{orderDetail.status == '101'  ?  'block' : 'none' }}" bindtap='payment' data-code='{{orderDetail.couponCode}}' data-ordersource='{{orderDetail.orderType}}' data-phoneNo='{{orderDetail.addressInfo.mobile}}' data-payAmount='{{orderDetail.payAmount}}' data-payType='{{orderDetail.payType}}' data-orderid='{{orderDetail.id}}'>去支付</view>
+    <!-- 申请退款 -->
+    <view class='fr' data-orderid='{{orderDetail.id}}' data-amount='{{orderDetail.payAmount}}' bindtap='refundApply' style="display:{{orderDetail.status == '105' ? 'block': 'none'}}">申请退款</view>
+    <view class='fr' data-orderid='{{orderDetail.id}}' bindtap='orderCancel' style="display:{{ orderDetail.status == '101'  ?  'block' : 'none'  }}">取消订单</view>
+    <view class='fr' data-orderid='{{orderDetail.id}}' bindtap='confirmReceive' style="display:{{orderDetail.status == '115' ? 'block': 'none'}}">确认收货</view>
+    <!-- 申请退货 -->
+    <view class='fr' data-orderid='{{orderDetail.id}}' data-amount='{{orderDetail.payAmount}}' bindtap='returnApply' style="display:{{orderDetail.status == '120' ? 'block': 'none'}}">申请退货</view>
+    <view class='fr' data-orderid='{{orderDetail.id}}' bindtap='addReturnNUM' style="width:280rpx; display:{{orderDetail.status == '130' ? 'block': 'none'}}">填写退货物流单号</view>
+    <view class='fr'>
+      <button class='contact' hover-class="none" open-type="contact">联系客服</button>
+    </view>
+  </view>
+</view>

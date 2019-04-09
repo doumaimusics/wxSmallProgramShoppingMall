@@ -1,0 +1,27 @@
+<!--pages/info/register/register.wxml-->
+
+<view class='wrapper-register'>
+  <image mode="widthFix" class="swiper-image" src="{{img}}"></image>
+  <!-- 登录按钮 -->
+  <!-- <view class='login-box'>
+  <button  class="button-img" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">开启UA智慧新体验</button>
+  </view> -->
+  <!-- 输入框 -->
+  <view class='register-box'>
+    <view class='register-title'>手机号绑定</view>
+    <view class='phone-Style'>
+      <input class='text-phone' bindinput='phone' type='text' placeholder='请输入手机号码'></input>
+    </view>
+    <view class='phone-Style mar-top'>
+      <input class='text-code'  bindinput='code' placeholder='请输入验证码'></input>
+      <button class='text-btn' hover-class="none"  disabled="{{codeDis}}"  bindtap='getphoneCodeFun'>
+        <text style='color:red;font-size: 26rpx; background: #ffffff;' hidden="{{phoneCode != '获取验证码'}}">{{phoneCode}}</text>
+        <text style='color:red;font-size: 26rpx; background: #ffffff;' hidden="{{phoneCode == '获取验证码'}}">{{phoneCode}}秒</text>
+      </button>
+    </view>
+    <view class='login-btn'>
+      <button type="default" bindtap='getCodeFun'>立即绑定</button>
+    </view>
+  </view>
+</view>    
+

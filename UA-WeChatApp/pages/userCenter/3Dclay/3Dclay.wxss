@@ -1,0 +1,150 @@
+/* pages/userCenter/3Dclay/3Dclay.wxss */
+page{
+  background: #ffffff;
+}
+.clay-wrapper{
+  width: 100%;
+  background-image: url('https://wx.3dculab.com/uaxcxv1.0.1/Content/3dBackg.jpg');
+  background-repeat:no-repeat; 
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+.img-wrapper{
+  width: 100%;
+  height: auto;
+}
+.img-sty{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.btn-sty{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 200rpx;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  z-index: 200;
+}
+.default{
+  flex: 1;
+  color: #ffffff;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 200rpx;
+}
+.actity{
+  border-radius: 100rpx;
+  padding: 15rpx 30rpx;
+  background: #ffffff;
+  color: #1476A7;
+}
+.clay-image{
+  width: 120rpx;
+  display: block;
+  position: absolute;
+  top: 180rpx;
+  right: 100rpx;
+}
+.clay-image image{
+ width: 100%;
+}
+.city-item{
+  width:280rpx;
+  height: auto;
+  position: relative;
+  left: 80rpx;
+  color: #ffffff;
+  font-size: 20rpx;
+}
+.city-item image{
+  width:100%;
+}
+.city-item-text{
+  width: 280rpx;
+  position: absolute;
+  top: 11rpx;
+  left: 0;
+  text-align: center;
+}
+.data-clay11{
+  top: 200rpx;
+}
+.data-clay12{
+  top: 220rpx;
+}
+.data-clay13{
+  top: 240rpx;
+}
+.data-clay14{
+  top: 260rpx;
+}
+.data-clay15{
+  top: 280rpx;
+}
+.data-clay16{
+  top: 300rpx;
+}
+/*  */
+.data-clay21{
+  top:350rpx;
+}
+.data-clay22{
+  top:370rpx;
+}
+.data-clay23{
+  top:390rpx;
+}
+.data-clay24{
+  top:410rpx;
+}
+.data-clay25{
+  top:430rpx;
+}
+.data-clay26{
+  top:450rpx;
+}
+/* 足型参数 */
+.foot-image{
+  width: 200rpx;
+  display: block;
+  position: absolute;
+  top: 180rpx;
+  right: 100rpx;
+}
+.foot-image image{
+ width: 100%;
+}
+.data-foot1{
+  top:330rpx;
+}
+.data-foot2{
+ top:350rpx;
+}
+.data-foot3{
+  top:370rpx;
+}
+.data-foot4{
+  top:390rpx;
+}
+.data-foot5{
+  top:410rpx;
+}
+.data-foot6{
+  top:430rpx;
+}
+.data-foot7{
+  top:450rpx;
+}
+.data-foot8{
+  top:470rpx;
+}
+.body-data{
+  padding-left:80rpx;
+  display: inline;
+}
+.body-data2{
+  padding-left:50rpx;display: inline;
+}

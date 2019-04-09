@@ -1,0 +1,3 @@
+<view wx:if="{{lampText}}" class="lamp-bg">
+    <view class="lamp-txt" style="animation: todayScroll {{timer}}s linear infinite normal;">{{lampText}}</view>
+</view> 

@@ -1,0 +1,112 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wxd1a827e7f57881db",
+	"projectname": "UA",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 1,
+					"name": "普通详情",
+					"pathName": "pages/info/details/details",
+					"query": "GoodsID=5c638b882dd9b12b04076eca&StoreID=5a14f56ee6c58c07f882cd5b",
+					"scene": 1029
+				},
+				{
+					"id": 2,
+					"name": "专区",
+					"pathName": "pages/info/recommend/recommend",
+					"query": "id=5bc45dd9e6c58d09f472f732&title=新品推荐",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "配件详情",
+					"pathName": "pages/info/detailsVahooGoods/detailsVahooGoods",
+					"query": "GoodsID=5c1a14e82dd9b11bcc413ae2&StoreID=5a14f56ee6c58c07f882cd5b",
+					"scene": 1029
+				},
+				{
+					"id": 4,
+					"name": "结算清单",
+					"pathName": "pages/info/temOrder/temOrder",
+					"query": "tempOrderId=5c763b699db6781284b1077a",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "我的订单",
+					"pathName": "pages/userCenter/myOrder/myOrder",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/userCenter/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/info/shoppingCart/shoppingCart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "分类",
+					"pathName": "pages/info/category/category",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "分享海报",
+					"pathName": "pages/info/poster/poster",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/info/rearch/rearch",
+					"query": "",
+					"scene": 1001
+				}
+			]
+		}
+	}
+}

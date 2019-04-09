@@ -1,0 +1,12 @@
+ <picker bindchange="bindPickerChange" value="{{companyIndex}}" range="{{arrayCompany}}">
+            <view class="companypicker">
+              {{companyIndex==-1?'选择快递公司': arrayCompany[companyIndex]}}
+              <image src="../../../resources/imgs/right_img.png" class="logistics_image"></image>
+            </view>
+ </picker>
+
+ <view class='input_box'>
+    <input type='number' placeholder="填写快递单号" bindinput="onInput" id="returnnum" value="{{returnnum != null ? returnnum : ''}}" bindblur='onblur' maxlength="60" bindfocus='onfocus' style="padding-left:20px;"></input>
+  </view>
+
+ <view class='btn_add' bindtap='addReturnNum' data-title='提交' data-temporderid='{{tempOrderId}}'>提交</view>

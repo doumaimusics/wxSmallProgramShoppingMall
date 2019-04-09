@@ -1,0 +1,176 @@
+<view class="">
+    <view class="tab-nav-01">
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex =='0' ? 'cur' : ''}}" data-id="0">
+          全部
+          </view>
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='101' ? 'cur' : ''}}" data-id="101">
+          待付款
+          </view>
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='105' ? 'cur' : ''}}" data-id="105">
+          待发货
+          </view>
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='115' ? 'cur' : ''}}" data-id="115">
+          待收货
+          </view>
+    </view>
+    <view style='width:750rpx;height:100rpx;'></view>
+    <!-- 全部 -->
+    <view class="filterate-list {{tabArr.tabCurConIndex=='0' ? 'active' : ''}}" data-bid="0">
+        <view class="filterate-item" wx:for="{{orderList}}" wx:key="{{index}}" wx:for-item="items" hidden='{{showlist}}'>
+            <view class='list_box'>
+                <view  class='clearfix head_name'>
+                    <view class='fl stroe_head_name'>
+                        <image src='../../../resources/imgs/ico_shop.png'></image>
+                        <text>{{items.storeName}}</text>
+                    </view>
+                    <view class='fr state'>{{items.text}}</view>
+                </view>
+                <view class='pad_box'>
+                    <view  class='clearfix main_box'  wx:for="{{items.products}}" wx:key="{{index}}" bindtap='orderDetails' data-orderid='{{items.id}}'>
+                      <image class="fl shop_name" mode='aspectFit' src="{{item.imageUrl}}"></image>
+                      <view class='fl shop_text'>
+                          <view>{{item.productName}}</view>
+                          <view class='color_b'><text>颜色：{{item.colorName}}  {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text></view>
+                          <view class='clearfix'>
+                              <view class='fl color_b'>数量：x<text>{{item.count}}</text></view>
+                              <view class='fr color_r'>￥<text>{{item.salePrice}}</text></view>
+                          </view>
+                      </view>
+                    </view>
+                    <view class='total'>共计<text>{{items.totalCount}}</text>件商品 合计：<text class='txt_1'>￥<text>{{items.payAmount}}</text></text></view>
+                </view>
+            </view>
+            <view class='clearfix btn_index'>   
+                <view class='fr' style="display:{{items.status == '101' ? 'block' : 'none'  }}" bindtap='payment' data-coupons='{{items.couponCode}}' data-ordersource='{{items.orderType}}'  data-payAmount='{{items.payAmount}}' data-payType='{{items.payType}}' data-orderid='{{items.id}}'>去支付</view>
+                <view class='fr' data-orderid='{{items.id}}' bindtap='orderCancel' style="display:{{ items.status == '101' ? 'block' : 'none' }}" data-setid="0">取消订单</view>
+                <!-- 申请退款 -->
+                <view class='fr' data-orderid='{{items.id}}' data-amount='{{items.payAmount}}' bindtap='refundApply' style="display:{{items.status == '105' ? 'block': 'none'}}">申请退款</view>
+
+                <view class='fr' data-orderid='{{items.id}}' bindtap='confirmReceive' style="display:{{items.status == '115' ? 'block': 'none'}}">确认收货</view>
+                <!-- 申请退货 -->
+                <view class='fr' data-orderid='{{items.id}}' data-amount='{{items.payAmount}}' bindtap='returnApply' style="display:{{items.status == '120' ? 'block': 'none'}}">申请退货</view>
+                <view class='fr' data-orderid='{{items.id}}' bindtap='addReturnNUM' style="width:280rpx; display:{{items.status == '130' ? 'block': 'none'}}">填写退货物流单号</view>
+
+                <view class='fr colors'><button class='contact'  hover-class="none" open-type="contact">联系客服</button></view> 
+            </view>
+        </view>
+          <view hidden='{{!showlist}}' class='noOrder-Sty' style="height: {{ windowHeight }}px;">
+            <view class='noOrder1'>您还没有相关的订单</view>
+            <view class='noOrder2'>可以去看看有哪些想买的</view>
+          </view>
+    </view>
+    <!-- 代付款 -->
+    <view class="filterate-list {{tabArr.tabCurConIndex=='101' ? 'active' : ''}}" data-bid="101">
+        <view class="filterate-item" wx:for="{{orderList}}" wx:key="{{index}}"  wx:for-item="items" hidden='{{showlist}}'>
+            <view class='list_box'>
+                <view  class='clearfix head_name'>
+                    <view class='fl stroe_head_name'>
+                        <image src='../../../resources/imgs/ico_shop.png'></image>
+                        <text>{{items.storeName}}</text>
+                    </view>
+                    <view class='fr state'>{{items.text}}</view>
+                </view>
+                <view class='pad_box'>
+                    <view  class='clearfix main_box'  wx:for="{{items.products}}" wx:key="{{index}}" bindtap='orderDetails' data-orderid='{{items.id}}'>
+                      <image class="fl shop_name" mode='aspectFit' src="{{item.imageUrl}}"></image>
+                      <view class='fl shop_text'>
+                          <view>{{item.productName}}</view>
+                          <view class='color_b'><text>颜色：{{item.colorName}}  {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text></view>
+                          <view class='clearfix'>
+                              <view class='fl color_b'>数量：x<text>{{item.count}}</text></view>
+                              <view class='fr color_r'>￥<text>{{item.salePrice}}</text></view>
+                          </view>
+                      </view>
+                    </view>
+                    <view class='total'>共计<text>{{items.totalCount}}</text>件商品 合计：<text class='txt_1'>￥<text>{{items.payAmount}}</text></text></view>
+                </view>
+            </view>
+            <view class='clearfix btn_index'>   
+                <view class='fr' style="display:{{ items.status == '101' ? 'block' : 'none' }}" bindtap='payment' data-ordersource='{{items.orderType}}' data-payType='{{items.payType}}' data-orderid='{{items.id}}'>去支付</view>
+                <view class='fr' data-orderid='{{items.id}}' bindtap='orderCancel' style="display:{{  items.status == '101' ? 'block' : 'none' }}"  data-setid="1">取消订单</view>
+                 <!--view class='fr' bindtap='makeCall'>联系客服</view-->
+                <view class='fr colors'><button class='contact' hover-class="none" open-type="contact">联系客服</button></view>
+            </view>
+        </view>
+         <view hidden='{{!showlist}}' class='noOrder-Sty' style="height: {{ windowHeight }}px;">
+            <view class='noOrder1'>您还没有相关的订单</view>
+            <view class='noOrder2'>可以去看看有哪些想买的</view>
+          </view>
+    </view>
+    <!-- 代发货 -->
+    <view class="filterate-list {{tabArr.tabCurConIndex=='105' ? 'active' : ''}}" data-bid="105">
+        <view class="filterate-item" wx:for="{{orderList}}" wx:key="{{index}}"  wx:for-item="items" hidden='{{showlist}}'>
+            <view class='list_box'>
+                <view  class='clearfix head_name'>
+                    <view class='fl stroe_head_name'>
+                        <image src='../../../resources/imgs/ico_shop.png'></image>
+                        <text>{{items.storeName}}</text>
+                    </view>
+                    <view class='fr state'>{{items.text}}</view>
+                </view>
+                <view class='pad_box'>
+                    <view  class='clearfix main_box'  wx:for="{{items.products}}" wx:key="{{index}}" bindtap='orderDetails' data-orderid='{{items.id}}'>
+                      <image class="fl shop_name" mode='aspectFit' src="{{item.imageUrl}}"></image>
+                      <view class='fl shop_text'>
+                          <view>{{item.productName}}</view>
+                          <view class='color_b'><text>颜色：{{item.colorName}}  {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text></view>
+                          <view class='clearfix'>
+                              <view class='fl color_b'>数量：x<text>{{item.count}}</text></view>
+                              <view class='fr color_r'>￥<text>{{item.salePrice}}</text></view>
+                          </view>
+                      </view>
+                    </view>
+                    <view class='total'>共计<text>{{items.totalCount}}</text>件商品 合计：<text class='txt_1'>￥<text>{{items.payAmount}}</text></text></view>
+                </view>
+            </view>
+            <view class='clearfix btn_index'>
+              <view class='fr' data-orderid='{{items.id}}' data-amount='{{items.payAmount}}'  bindtap='refundApply' style="display:{{items.status == '105' ? 'block': 'none'}}">申请退款</view> 
+              <view class='fr colors'><button class='contact'  hover-class="none" open-type="contact">联系客服</button></view>
+            </view>
+        </view>
+        <view hidden='{{!showlist}}' class='noOrder-Sty' style="height: {{ windowHeight }}px;">
+          <view class='noOrder1'>您还没有相关的订单</view>
+          <view class='noOrder2'>可以去看看有哪些想买的</view>
+        </view>
+    </view>
+    <!-- 待收货 -->
+     <view class="filterate-list {{tabArr.tabCurConIndex=='115' ? 'active' : ''}}" data-bid="115">
+       <view class="filterate-item" wx:for="{{orderList}}" wx:key="{{index}}"  wx:for-item="items" hidden='{{showlist}}'>
+            <view class='list_box'>
+                <view  class='clearfix head_name'>
+                    <view class='fl stroe_head_name'>
+                        <image src='../../../resources/imgs/ico_shop.png'></image>
+                        <text>{{items.storeName}}</text>
+                    </view>
+                    <view class='fr state'>{{items.text}}</view>
+                </view>
+                <view class='pad_box'>
+                    <view  class='clearfix main_box'  wx:for="{{items.products}}" wx:key="{{index}}" bindtap='orderDetails' data-orderid='{{items.id}}'>
+                      <image class="fl shop_name" mode='aspectFit'  src="{{item.imageUrl}}"></image>
+                      <view class='fl shop_text'>
+                          <view>{{item.productName}}</view>
+                          <view class='color_b'><text>颜色：{{item.colorName}}  {{item.sizeName=='0'?'':'尺码：'+item.sizeName}}</text></view>
+                          <view class='clearfix'>
+                              <view class='fl color_b'>数量：x<text>{{item.count}}</text></view>
+                              <view class='fr color_r'>￥<text>{{item.salePrice}}</text></view>
+                          </view>
+                      </view>
+                    </view>
+                    <view class='total'>共计<text>{{item.count}}</text>件商品 合计：<text class='txt_1'>￥<text>{{items.payAmount}}</text></text></view>
+                </view>
+            </view>
+            <view class='clearfix btn_index'>   
+              <view class='fr' data-orderid='{{items.id}}' bindtap='confirmReceive' style="display:{{items.status == '115' ? 'block': 'none'}}">确认收货</view>
+              <view class='fr colors'><button class='contact'  hover-class="none" open-type="contact">联系客服</button></view>
+            </view>
+        </view>
+         <view hidden='{{!showlist}}' class='noOrder-Sty' style="height: {{ windowHeight }}px;">
+            <view class='noOrder1'>您还没有相关的订单</view>
+            <view class='noOrder2'>可以去看看有哪些想买的</view>
+          </view>
+    </view>
+</view>
+<!-- <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore__tips">正在加载</view>
+</view> -->

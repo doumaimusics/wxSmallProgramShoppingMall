@@ -1,0 +1,26 @@
+<view class='aboutUs-wrapper'>
+  <view class='viedo-image-bg' bindtap='playViedo' style="display: {{ imagehide == true ? 'block' : 'none' }};">
+    <image class='imageBg' src='https://wx.3dculab.com/uaxcxv1.0.1/Content/videoCover.jpg'></image>
+    <image class='playSty' src='../../../resources/imgs/play_btn.png'></image>
+  </view>
+  <video id='videoId' style='display:{{ imagehide == true ? "none" : "block"}}' src="{{src}}" controls="true" objectFit='cover' ></video>
+</view>
+<view class='text-title view-padding'>
+  <view class='icon-red'></view>
+  <view class='textStyle'>UA中国首家新零售数字体验店</view>
+  <view class='icon-red'></view>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>Under Armour安德玛Lu-One Youth店，是安德玛中国大陆地区第一家新零售数字体验店。店铺采用3D足型、3D身体扫描系统及互动液晶大屏，让顾客多方位体验科技互动。</text>
+</view>
+<view class='image_class'>
+  <image mode='widthFix' src='https://wx.3dculab.com/uaxcxv1.0.1/Content/about01.jpg'></image>
+</view>
+<view class='view-padding'>
+  <text class='text-content'>通过3D精准测量，云端实时建模，三维云计算法则，轻松为您挑选最合适的鞋和服装。海量鞋库及服装，液晶触屏操作下单，轻松便捷，直接快递到家。黑科技闪亮Lu-One，躁动金秋。</text>
+</view>
+<view class='image_class'>
+  <image mode='widthFix' src='https://wx.3dculab.com/uaxcxv1.0.1/Content/about02.jpg'></image>
+</view>
+
+

@@ -1,0 +1,94 @@
+<view class="row clearfix">
+<!-- 绑定栏  -->
+    <view class='search-wrapper'>
+      <input class='search-input' placeholder='请输入优惠券代码' bindinput='getCode'></input>
+      <button class='search-button' bindtap='binding'>绑定</button>
+    </view>
+    <view class="tab-nav-01">
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='0' ? 'cur' : ''}}" data-id="0">
+          未使用({{coupons.length==0?0:coupons.length}})
+          </view>
+          <!-- <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='1' ? 'cur' : ''}}" data-id="1">
+          已使用(12)
+          </view>
+          <view bindtap="tabFun" class="tab-item {{tabArr.tabCurIndex=='2' ? 'cur' : ''}}" data-id="2">
+          已过期(12)
+          </view> -->
+    </view>
+    <view class="filterate-list {{tabArr.tabCurConIndex=='0' ? 'active' : ''}}">
+        <view class="filterate-item" wx:for="{{coupons}}" wx:key="index">
+            <image src='https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/bacgroundCoupon.png'></image>
+            <view class='clearfix list_box'>
+                <view class='fl list_box_l'>
+                    <view>￥<text>{{item.deduction_amount}}</text></view>
+                    <view>满{{item.limit_amount}}元可用</view>
+                </view>
+                <view class='fr list_box_r'>
+                    <view>{{item.name}}</view>
+                    <view>{{item.description}}</view>
+                    <view>有效期：{{item.start_date}}~{{item.end_date}}</view>
+                </view>
+            </view> 
+        </view>
+    </view>
+    <!-- <view class="filterate-list {{tabArr.tabCurConIndex=='1' ? 'active' : ''}}">
+        <view class="filterate-item">
+            <image src='../../../resources/imgs/bacgroundCoupon.png'></image>
+            <view class='clearfix list_box'>
+                <view class='fl list_box_l'>
+                    <view>￥<text>50</text></view>
+                    <view>满200元可用</view>
+                </view>
+                <view class='fr list_box_r'>
+                    <view>单品优惠券</view>
+                    <view>限毛绒玩具类商品</view>
+                    <view>有效期：2017.12.12~2018.12.12</view>
+                </view>
+            </view>
+        </view>
+        <view class="filterate-item">
+            <image src='../../../resources/imgs/bacgroundCoupon.png'></image>
+            <view class='clearfix list_box'>
+                <view class='fl list_box_l'>
+                    <view>￥<text>10</text></view>
+                    <view>满100元可用</view>
+                </view>
+                <view class='fr list_box_r'>
+                    <view>单品优惠券</view>
+                    <view>限毛绒玩具类商品</view>
+                    <view>有效期：2017.12.12~2018.12.12</view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <!-- <view class="filterate-list {{tabArr.tabCurConIndex=='2' ? 'active' : ''}}">
+        <view class="filterate-item">
+            <image src='../../../resources/imgs/bacgroundCoupon.png'></image>
+            <view class='clearfix list_box'>
+                <view class='fl list_box_l'>
+                    <view>￥<text>10</text></view>
+                    <view>满100元可用</view>
+                </view>
+                <view class='fr list_box_r'>
+                    <view>单品优惠券</view>
+                    <view>限毛绒玩具类商品</view>
+                    <view>有效期：2017.12.12~2018.12.12</view>
+                </view>
+            </view>
+        </view>
+        <view class="filterate-item">
+            <image src='../../../resources/imgs/bacgroundCoupon.png'></image>
+            <view class='clearfix list_box'>
+                <view class='fl list_box_l'>
+                    <view>￥<text>100</text></view>
+                    <view>满300元可用</view>
+                </view>
+                <view class='fr list_box_r'>
+                    <view>单品优惠券</view>
+                    <view>限毛绒玩具类商品</view>
+                    <view>有效期：2017.12.12~2018.12.12</view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+</view>

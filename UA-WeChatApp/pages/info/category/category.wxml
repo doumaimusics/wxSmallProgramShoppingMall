@@ -1,0 +1,26 @@
+<view class="category">
+  <view class="nav_left">
+    <view class="item {{type_state==item.sort?'show':''}}" bindtap="handelNav" data-sort="{{item.sort}}" data-code="{{item.code}}" data-id="{{item.id}}" wx:key="{{index}}" wx:for="{{category}}">
+      <view class="block"></view>
+      {{item.name}}
+    </view>
+  </view>
+  
+  <view class="nav_con clearfix">
+    <image class="head_img" src="https://img.fansnew.com/man_clothes.png" wx:if="{{type_state==1}}"></image> <!--  男上装 -->
+    <image class="head_img" src="https://img.fansnew.com/nan_ku.png" wx:if="{{type_state==2}}"></image>   <!-- 男下装 -->
+    <image class="head_img" src="https://img.fansnew.com/%20shoe.png" wx:if="{{type_state==3}}"></image><!-- 男鞋 -->
+    <image class="head_img" src="https://img.fansnew.com/nv_sz.png" wx:if="{{type_state==4}}"></image> <!-- 女上装 -->
+    <image class="head_img" src="https://img.fansnew.com/nv_xz.png" wx:if="{{type_state==5}}"></image><!-- 女下装 -->
+    <image class="head_img" src="https://img.fansnew.com/nv_shoe.png" wx:if="{{type_state==6}}"></image><!-- 女鞋 -->
+    <image class="head_img" src="https://img.fansnew.com/pj.png" wx:if="{{type_state==7}}"></image><!-- 运动配件 -->
+    <image class="head_img" src="https://img.fansnew.com/nan_tong.png" wx:if="{{type_state==8}}"></image><!-- 男童装备 -->
+    <image class="head_img" src="https://img.fansnew.com/nv_tong.png" wx:if="{{type_state==9}}"></image><!-- 女童装备 -->
+    <view class="items-box">
+      <view class="items" wx:key="{{index}}" wx:for="{{child_category.subCategory}}" data-title="{{item.name}}" data-condition="{{item.condition}}" bindtap="go_search">
+        <image src="{{item.imageUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

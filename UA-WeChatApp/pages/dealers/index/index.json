@@ -1,0 +1,7 @@
+{
+    "backgroundTextStyle":"dark",
+    "onReachBottomDistance": 50,
+    "navigationBarTitleText": "智慧门店",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+}

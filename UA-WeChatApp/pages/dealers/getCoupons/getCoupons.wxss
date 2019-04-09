@@ -1,0 +1,59 @@
+page{
+  background: #fff;
+}
+.img_head{
+  width:750rpx;
+  height:419rpx;
+  display: block;
+}
+.storeInformation{
+  width:690rpx;
+  padding: 50rpx 30rpx;
+  color: #333;
+  font-size:34rpx;
+  line-height: 1.7;
+}
+.loc_img{
+  width:32rpx;
+  height:45rpx;
+  position: relative;
+  top:8rpx;
+}
+.phone_img{
+  width:44rpx;
+  height:44rpx;
+  position: relative;
+  top:8rpx;
+}
+.bac_coupons{
+  width:718rpx;
+  height:319rpx;
+  margin:0 auto 15rpx;
+  position: relative;
+}
+.bac_coupons image,.coupons_box{
+  width:718rpx;
+  height:319rpx;
+  display: block;
+}
+.text_w{
+  display: inline-block;
+   width:99%; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.map-warpper{
+  width: 100%;
+  height: auto;
+}
+.swiper-box,.slide {
+    width: 750rpx;
+    height: 364rpx;
+}
+.slide-image{
+  width: 750rpx;
+}
+.clearfix{
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+.lamp-bg {
+  width: 750rpx;
+  height: 40rpx;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.lamp-txt {
+  line-height: 40rpx;
+  font-size: 20rpx;
+  color: #fff;
+  white-space: nowrap;
+}
+@-webkit-keyframes todayScroll  {
+  0% {-webkit-transform:translate(100%);}
+  100% {-webkit-transform:translate(-160%);}
+}
+                      
+@keyframes todayScroll {
+  0% {transform:translate(100%);}
+  100% {transform:translate(-160%);}
+}
+ 

@@ -1,0 +1,39 @@
+.welcome-wrapper{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.welcome-wrapper image{
+  width: 100%;
+  height: 100%;
+}
+.welcome-button{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  font-weight: bold;
+}
+.welcome-button button{
+  border-radius: 0rpx;
+  width:500rpx; 
+  background: #000000;
+  color: #ffffff;
+}
+.welcome-button view{
+  padding-top: 20rpx;
+  color: #ffffff;
+  font-size: 26rpx;
+}
+.welcome-text{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  color: #ffffff;
+  font-weight: bold;
+}

@@ -1,0 +1,22 @@
+<view>
+  <view class='main_add'>
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+        <view class='add_txt clearfix'>
+            <view class='fl name_t'>
+                <view class='name_t1'>{{item.name}}</view>
+                <view class='default' style="display: {{ item.isDefault == true ? 'block' : 'none' }};">默认</view>
+            </view>
+            <view class='fl box_add' bindtap='text_add' data-name="{{item.name}}" data-phone="{{item.mobile}}" data-street="{{item.address}}" data-city="{{item.provinceName + '-'+ item.cityName + '-'+ item.districtName}}" data-addressid="{{item.id}}" data-provincesid="{{item.provinceId}}" data-cityid="{{item.cityId}}" data-districtid="{{item.districtId}}" data-provincesname="{{item.provinceName}}" data-citys="{{item.cityName}}" data-district="{{item.districtName}}" data-isdefault="{{item.isDefault}}">
+                <view>{{item.mobile}}</view>
+                <view class='box_add1'>{{item.provinceName + item.cityName + item.districtName+item.address}}</view>
+            </view>
+            <view class='edit_btn fr' data-title='编辑地址' bindtap='editAddress' data-name="{{item.name}}" data-phone="{{item.mobile}}" data-street="{{item.address}}" data-city="{{item.provinceName + '-'+ item.cityName + '-'+ item.districtName}}" data-addressid="{{item.id}}" data-provincesid="{{item.provinceId}}" data-cityid="{{item.cityId}}" data-districtid="{{item.districtId}}" data-provincesname="{{item.provinceName}}" data-citys="{{item.cityName}}" data-district="{{item.districtName}}" data-isdefault='{{item.isDefault}}' data-temporderid='{{tempOrderId}}' data-mail='{{item.email}}'>
+              <image src='../../../resources/imgs/edit.png'></image>
+            </view>
+        </view>
+        <view class="del" catchtap="del" data-addressid="{{item.id}}" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+   <view style='height:90rpx;'></view> 
+</view>
+<view class='btn_add' bindtap='addTheAddress' data-title='添加地址' data-temporderid='{{tempOrderId}}'>添加地址</view>

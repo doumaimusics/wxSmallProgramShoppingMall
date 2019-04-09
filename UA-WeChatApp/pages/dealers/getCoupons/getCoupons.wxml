@@ -1,0 +1,27 @@
+<view class='coupons_main'>
+    <image style='display:{{isFor==false?"block":"none"}}' src='{{defaultImage}}' class='img_head'></image>
+    <!-- 图片轮播 -->
+      <view class="swiper-box">
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColors}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circulars}}" indicator-active-color="{{indicatorActiveColor}}" class='slide'>
+      <block wx:for="{{videos.store_picture}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" bindtap='openReommend' mode="widthFix" data-title="{{item}}"  class="slide-image" width="100%" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+    <!-- 店铺地址 -->
+    <view class='storeInformation' bindtap='map'>
+        <view style='font-weight:bold;'>{{videos.store_name}}</view>
+        <view>距离：<text>{{videos.distance}}</text></view>
+        <view class='clearfix'>
+            <view class='fl clearfix'>
+                <text class='text_w fl'>{{ videos.address}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 地图  -->
+    <view class='map-warpper'>
+      <map  longitude="{{myoptions.longitude}}" latitude="{{myoptions.latitude}}" scale="16" markers="{{markers}}" show-location style="width: 100%; height: 400px;" bindmarkertap="map"></map>
+    </view>
+</view>

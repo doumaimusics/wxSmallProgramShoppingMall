@@ -1,0 +1,11 @@
+<view class='container'>
+  <view  class='detail_box' wx:for="{{traces}}" wx:key="index">
+
+      <view class='detailleft'> <view class='circle'><image wx:if='{{index==0}}' src='/resources/imgs/circle2.png' mode='scaleToFill'></image></view> </view>
+      <view class='detail'>
+        <text style="color:{{index==0? 'red':'#e5e5e5'}}; font-size:30rpx; width: 600rpx; float:left;">{{item.content}}</text>
+        <text style="font-size:25rpx; float:left; color:{{index==0? 'black':'#e5e5e5'}};">{{item.datetime}}</text>
+      </view>
+
+  </view>
+</view>

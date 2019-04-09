@@ -1,0 +1,9 @@
+<!--微信支付-->
+<view class='warpper-Alipay'>
+    <view class='image-view'>
+      <image mode='aspectFill' src='https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/wxpay.png'></image>
+      <view class='font-fwei'>请关闭小程序打开微信支付</view>
+      <view class='font-fwei' style='font-weight:inherit;'>扫描屏幕二维码完成支付</view>
+      <view class='font'>订单信息可在UA小程序中查看</view>
+    </view>
+</view>

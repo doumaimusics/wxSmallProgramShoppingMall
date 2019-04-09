@@ -1,0 +1,30 @@
+<view style='background-color:#fff;height:280rpx;' >
+<radio-group  bindchange="radioChange">  
+  <!--pay type start-->
+<view style='background-color:#fff;height:280rpx;'>  
+  <view class="paytype">
+    <view class="paytypeleft">
+      <image class="payimg paytypeleftitem" src="https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/wxpay.png"></image>
+      <text class='paytypetext paytypeleftitem'>微信支付</text>
+    </view>
+    <view class="paytyperight">
+      <radio value="2" checked="true"/>
+    </view>
+  </view>
+  <view class="payfgx"></view>
+    <view class="paytype">
+      <view class="paytypeleft">
+        <image class='payimg paytypeleftitem' src="https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/alipay.png"></image>
+        <text class='paytypetext paytypeleftitem'>支付宝支付</text> 
+      </view>
+      <view class="paytyperight">
+        <radio value="1" />
+      </view> 
+    </view>
+  </view>
+  <!--  -->
+  
+<!--pay type end-->
+</radio-group>
+<view class='storepayment' bindtap='goPay'>支付</view>
+</view>

@@ -1,0 +1,12 @@
+<swiper indicator-dots="true">
+    <block wx:for="{{imgs}}" wx:for-index="index" wx:key="index">
+      <swiper-item class="swiper-items"  >
+        <image class="swiper-image" src="{{item}}"></image>
+        <view  class='btn-box' wx:if="{{isShowBtn}}">
+        <button  class="button-img" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">开启UA智慧新体验</button>
+        </view>
+      </swiper-item>
+    </block>
+</swiper>
+
+

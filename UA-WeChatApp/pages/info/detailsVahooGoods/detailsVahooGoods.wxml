@@ -1,0 +1,134 @@
+<view class="page" style="overflow:{{pagehid}};height:{{height}}" >
+    <view class="go_home" wx:if="{{sign}}" bindtap="go_home">
+      <image src="http://img.fansnew.com/34343.png"  />
+      <text>去首页</text>
+    </view>
+    <view class='box'>
+        <view class='main'>
+            <view class="swiper-box">
+                <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColors}}" autoplay="{{autoplay}}"    interval="{{interval}}" duration="{{duration}}" circular="{{circulars}}" indicator-active-color="{{indicatorActiveColor}}" class='slide'>
+                  <block wx:for="{{details.photo}}" wx:key="index">
+                      <swiper-item class='item_box'>
+                        <image src="{{item}}" class="slide-image"/>
+                      </swiper-item>
+                  </block>
+              </swiper>
+            </view>
+            <view class='content'>
+                <view class='content_name'>{{details.name}}{{details.pattern}}</view>
+                   <view class="share_poster" bindtap="go_poster">
+                      <image src="https://img.fansnew.com/share_poster.png" />
+                    </view>
+                <view class='content_pre'>
+                    <text class='color_t'>￥<text>{{details.sale_price}}</text></text>
+                    <text class="color_txt" style="text-decoration:line-through;display: {{ details.sale_price >= details.tag_price ? 'none' : 'inline-block' }};'">￥<text>{{details.tag_price}}</text></text>
+                </view>
+                <view class='btn_explain clearfix' bindtap="setModal" data-status="1">
+                    <view class="gspan fl clearfix">
+                        <view class='fl'><image src="../../../resources/imgs/icon_check.png"></image><text>正品保证</text></view>
+                        <view class='fl'><image src="../../../resources/imgs/icon_check.png"></image><text>七天包退</text></view>
+                        <view class='fl'><image src="../../../resources/imgs/icon_check.png"></image><text>七天可换</text></view>
+                    </view>
+                    <view class="dright-icon fr"><image src="../../../resources/imgs/marketTitle.png"></image></view>
+                </view>
+            </view>
+        </view>
+        <view class='clearfix btn_choice' bindtap="showGoodType" id='0'>
+            <view class='fl'>
+              <text style='display:{{specSize==undefined?"block":"none"}}'>规格数量选择</text>
+            <text style='display:{{specSize==undefined?"none":"block"}};font-size:30rpx;'>已选 <text style='color:#000000;font-size:35rpx;font-weight:bold;'>{{specSize}}</text></text>
+            </view>
+            <view class='fr'><image src="../../../resources/imgs/marketTitle.png"></image></view>
+        </view>
+        <!-- <block wx:for="{{details.web_info}}" wx:key="index">
+              <image src='{{item}}' class='imgs' mode="widthFix"></image>
+        </block> -->
+        <view class='rict-box'>
+          <rich-text nodes="{{detailInfo}}"></rich-text>  
+        </view>
+        <view style='height:90rpx;'></view>
+    </view>
+</view>
+<!-- 底部按钮 -->
+<view class='pos_fixd clearfix' wx:for="{{details.sku}}" wx:key="">
+    <view class='flexf1'>
+        <!--image src='../../../resources/imgs/kf.png'></image-->
+        <button open-type="contact" hover-class='none' class='callcontact'></button>
+        <text>客服</text>
+    </view>
+    <view class='flexf1'>
+        <button class='shopCar-sty' hover-class='none' open-type="getUserInfo" id='3' bindgetuserinfo="bindGetUserInfo">
+          <view class='number' style='display:{{IsLogin?"block":"none"}}'>{{shopNumber>=100?"99+":shopNumber}}</view>
+          <image src='../../../resources/imgs/shoppingCart1.png'></image>
+          <text>购物车</text>
+        </button>
+    </view>
+    <!-- 购物车 -->
+    <button class='flexf2' hover-class='none' open-type="getUserInfo" id='0' bindgetuserinfo="bindGetUserInfo">加入购物车</button>
+    <!-- 购买 -->
+    <button class='flexf3' hover-class='none' open-type="getUserInfo" id='1' bindgetuserinfo="bindGetUserInfo" >立即购买</button>
+</view>
+<!-- 类目 -->
+<view class="drawer_screen" bindtap="setModalStatus" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}" wx:for="{{details.sku}}" wx:key="index" wx:for-item="sku">
+    <view class="close_icon" bindtap="setModalStatus">
+        <image src='../../../resources/imgs/X4.png'></image>
+    </view>
+    <view class="drawer_attr_content">
+        <view class="text_center clearfix">
+            <image class="drawer_image fl" mode='aspectFit' src="{{picture==undefined?sku.picture[0]:picture}}"></image>
+            <view class='fl pre_text'>
+                <view>价格：￥<text>{{price==undefined?details.sale_price:price}}</text></view>
+            </view>
+        </view>
+        <view class="drawer_choice">
+              <view class='sel'>选择类目</view>
+              <view class='clearfix category' wx:for="{{details.sku}}" wx:key="index">
+                  <view class='fl' style='background:{{item.bacColor}};color:{{item.colors}}' bindtap='{{item.stores[0].quantity<=0?"":"btntap"}}' id='{{index}}' data-skuid='{{item.id}}'>{{item.name}}</view>
+              </view>
+        </view>
+        <view class="drawer_desc">
+            <view class='sel'>选择数量</view>
+              <view class='clearfix btn_m'>
+                  <view class='fl btn_s {{ buyCount== "1" ? "cur" : "" }}' catchtap="min">-</view>
+                  <view class='fl btn_t'>{{buyCount}}</view>
+                  <view class='fl btn_s {{ buyCount != "50" ? "" : "cur" }}' catchtap="add">+</view>
+              </view>
+        </view>
+    </view>
+</view>
+<view class="drawer_screen" catchtouchmove='true' bindtap="setModal" data-status="0" wx:if="{{showModal}}"></view>
+<view id="ecPopg" catchtouchmove='true'  class="guarantee-content"  animation="{{animationData}}" wx:if="{{showModal}}">
+    <view class="guarantee-titile">服务承诺</view>
+    <view class="guarantee-pop">
+   <view class="guarantee-item">
+      <view>
+        <text>退</text>
+        七天包退
+      </view>
+      <view>该商品支持7天无理由退货，请放心购买！</view>
+    </view>
+    <view class="guarantee-item">
+      <view>
+        <text>赔</text>
+        假一赔十
+      </view>
+      <view>若检测结果为伪冒品，平台将十倍价格赔付</view>
+    </view>
+    <view class="guarantee-item">
+      <view>
+        <text>换</text>
+        七天可换
+      </view>
+      <view>该商品支持换货，订单签收7天内申请换货</view>
+    </view>
+    <view class="guarantee-item">
+      <view>
+        <text>正</text>
+        正品保证
+      </view>
+      <view>商城所有商品均由Under Armour官方平台供货，100%正品保证</view>
+    </view>
+    </view>
+    <view class="bottom-confirm"  bindtap="setModal" data-status="0" wx:if="{{showModal}}">完成</view>
+</view>

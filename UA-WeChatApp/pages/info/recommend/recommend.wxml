@@ -1,0 +1,33 @@
+  <view class="area-list">
+  <view class="filter clearfix" wx:if="{{sign}}">
+      <view bindtap="tapChange" id="all" class="{{type_all?'active':''}}">
+        全部
+        <view class="pointer"></view>
+      </view>
+      <view bindtap="tapChange"  id="news" class="{{type_news?'active':''}}">
+        新品
+        <!-- <text class="sort-icon {{type_sort_news?'active':''}}"></text> -->
+        <view class="pointer"></view>
+      </view>
+      <view bindtap="tapChange"  id="pri"  class="{{type_price?'active':''}}">
+        价格
+        <text class="sort-icon {{type_sort_pri?'active':''}}"></text>
+        <view class="pointer"></view>
+      </view>
+  </view>
+  <!-- wx:for="{{mallLists}}" wx:key="index" wx:for-item='goodds' -->
+  <view class="mall_box">
+    <view class='mall_main clearfix' bindtap='details' wx:for="{{mallLists}}" wx:key="index" data-id="{{item.id}}" data-storeid="{{item.storeId}}" data-nama='{{item.type}}' data-off="{{off}}" id='{{index}}'>
+        <image src='{{item.imageUrl}}' class='img_box fl'></image>
+        <view class='fr txt_m'>
+            <!-- <image src='../../../resources/imgs/hot.png' class='img1'></image> -->
+            <view class="shop-title">{{item.name}}{{item.pattern}}</view>
+            <view>
+                  <text class='color_t'>￥<text>{{item.salePrice}}</text></text>
+                  <text class="color_txt" style="text-decoration:line-through;display: {{ Number(item.salePrice) > Number(item.tagPrice)||item.salePrice==item.tagPrice ? 'none' : 'inline-block' }};">￥<text>{{item.tagPrice}}</text></text>
+            </view>
+        </view>
+      </view>
+  </view>
+  <view style='display:{{pageIndex>=messages?"block":"none"}}' class='noMore'>没有更多~</view>
+</view>

@@ -1,0 +1,62 @@
+.container{
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;  
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+.circle{
+  width: 20rpx;
+  height:20rpx;
+  border-radius: 10rpx;
+  background-color: #e5e5e5;
+  margin: 0 auto;
+}
+.circle image{
+  width: 30rpx;
+  height:30rpx;
+  border-radius: 15rpx;
+  margin: 0 auto;
+}
+.detail_box:first-child .circle{
+  width: 30rpx;
+  height:30rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.detail_box:first-child .detailleft{
+  background-image:url('https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/leftbg0.png');  
+  background-size: 100% 100%;
+}
+
+.detail_box:last-child .detailleft{
+  background-image:url('https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/leftbg2.png');  
+  background-size: 100% 100%;
+}
+
+.detail_box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content:center;
+  align-items:stretch;
+  margin: 0;
+  padding: 0;
+}
+.detail{
+  margin-left:0rpx;
+  border-bottom: 2rpx solid #e5e5e5; 
+  padding:20rpx;
+  width: 630rpx;
+}
+.detailleft{
+  width:100rpx;  
+  float:left;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background-image:url('https://wx.3dculab.com/wxMsgSvr/hellokittyimg/resources/imgs/leftbg.png');  
+  background-size: 100% 100%;
+}

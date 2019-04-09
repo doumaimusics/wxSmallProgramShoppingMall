@@ -1,0 +1,44 @@
+/* pages/info/nearbyStore/nearbyStore.wxss */
+page{
+  background:#fff;
+}
+.map_store{
+  width:690rpx;
+  margin-left:30rpx;
+  padding:30rpx 30rpx 30rpx 0;
+  border-bottom: 2rpx solid #e4e4e4;
+}
+.name_store{
+  font-size: 38rpx;
+}
+.name_id,.name_t{
+  display: flex;
+  justify-content: space-between;
+}
+.name_store,.loc_t{
+  line-height: 60rpx;
+}
+.loc_t{
+  font-size: 30rpx;
+}
+.distance{
+  width:160rpx;
+  height:56rpx;
+  text-align: center;
+  color: #32a131;
+  border: 4rpx solid #8bc34a;
+  line-height: 56rpx;
+  font-size: 22rpx;
+  border-radius: 12rpx;
+  margin:0 10rpx;
+}
+.address{
+  line-height: 1.8;
+  color: #9b9b9b;
+  font-size: 28rpx;
+}
+.logo_img{
+  width: 232rpx;
+  height:232rpx;
+  border-radius: 50%;
+}

@@ -1,0 +1,141 @@
+page {
+    background: #fff;
+}
+.search-class{
+  width: 100%;
+}
+/* 搜索模块 */
+.search-wrapper{
+  width: 100%;
+  height: 120rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #F0EFF6;
+}
+.search-input{
+  width: 88%;
+  height: 80rpx;
+  padding-left:84rpx; 
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  padding-right: 110rpx;
+}
+.seach-left{
+  position: absolute;
+  width: 35rpx;
+  left: 43rpx;
+  top:44rpx;
+}
+.seach-right{
+  position: absolute;
+  width: 35rpx;
+  right: 124rpx;
+  top:44rpx;
+}
+.cancel-sty{
+  position: absolute;
+  width: 12%;
+  height: 76rpx;
+  line-height: 76rpx;
+  right: 0rpx;
+  top:30rpx;
+  font-size: 34rpx;
+  text-align: left;
+  color: #727272;
+}
+.no-search{
+  width: 100%;
+  height: auto;
+  margin-top: 140rpx;
+}
+.no-search view{
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #727272;
+  padding-top: 50rpx;
+}
+.no-search view:last-child{
+  padding-top: 5rpx;
+}
+.near-search{
+  width: 100%;
+  height: auto;
+  padding: 100rpx 40rpx;
+  box-sizing: border-box;
+  margin-top: 140rpx;
+}
+.near-title{
+  width: 100%;
+  height: auto;
+   overflow: hidden;
+}
+.near-title view:first-child{
+  font-size: 30rpx;
+  float: left;
+}
+.near-title view:last-child{
+  float: right;
+}
+.sreach-content{
+  width: 100%;
+  height: auto;
+  padding: 10rpx 0rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.sreach-content view{
+  float: left;
+  height: auto;
+  padding: 8rpx 25rpx;
+  text-align: center; 
+  background: #efefef;
+  border-radius: 30rpx;
+  margin-top: 15rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  max-width: 180rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 搜索成功 */
+.mall_main{
+  width:710rpx;
+  padding: 20rpx;
+  background: #fff;
+  margin-top:20rpx;
+}
+.img_box{
+  width:298rpx;
+  height:298rpx;
+}
+.txt_m{
+  width:382rpx;
+  padding-left:30rpx;
+  color: #333;
+  font-size: 36rpx;
+  line-height: 1.6;
+  padding-top:20rpx;
+}
+.color_txt{
+  font-size: 30rpx;
+  color:#ababab;
+  margin-left:20rpx;
+}
+.color_t{
+  color:red;
+}
+.img1{
+  width:52rpx;
+  height:39rpx;
+  display: block;
+  position: relative;
+  top:14rpx;
+}

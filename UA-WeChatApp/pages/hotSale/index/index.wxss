@@ -1,0 +1,41 @@
+.mall_main{
+  width:710rpx;
+  padding: 20rpx;
+  background: #fff;
+  margin-top:20rpx;
+}
+.img_box{
+  width:298rpx;
+  height:298rpx;
+}
+.txt_m{
+  width:382rpx;
+  padding-left:30rpx;
+  color: #333;
+  font-size: 36rpx;
+  line-height: 1.6;
+  padding-top:20rpx;
+}
+.color_txt{
+  font-size: 30rpx;
+  color:#ababab;
+  margin-left:20rpx;
+}
+.color_t{
+  color:red;
+}
+.img1{
+  width:52rpx;
+  height:39rpx;
+  display: block;
+  position: relative;
+  top:14rpx;
+}
+.noMore{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
